@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satya Manikumar Chode - Home</title>
+    <link rel="stylesheet" href="style.css">
+<style>html { scroll-behavior: smooth; }</style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">My Journey</a></li>
+                <li><a href="#">Timeline</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+<section class="hero-section" id="home">
+    <div class="hero-container">
+        <img src="profile-picture.jpg" alt="Satya Manikumar Chode" class="profile-picture">
+        <h1 class="main-heading">Satya Manikumar Chode</h1>
+        <p class="sub-heading typed-text">Engineer | Learner | Logistics Explorer</p>
+        <p class="quote">“From satellites to supply chains — a story of continuous learning and transformation.”</p>
+        <div class="button-container">
+            <a href="#my-journey" class="btn">Read My Journey</a>
+            <a href="https://www.linkedin.com/in/YOUR-USERNAME" target="_blank" class="btn">View Resume/LinkedIn</a>
+        </div>
+    </div>
+</section>
+
+<section id="my-journey" class="section">
+    <h2>My Journey</h2>
+    <p>Coming soon: A brief story of my educational and career journey.</p>
+</section>
+
+<section id="timeline" class="section">
+    <h2>Timeline</h2>
+    <p>Here you'll see a timeline of major life and career events.</p>
+</section>
+
+<section id="gallery" class="section">
+    <h2>Gallery</h2>
+    <p>A photo gallery to showcase projects, events, and achievements.</p>
+</section>
+
+<section id="about-me" class="section">
+    <h2>About Me</h2>
+    <p>This section will describe who I am, my passions, and my goals.</p>
+</section>
+
+<section id="skills" class="section">
+    <h2>Skills</h2>
+    <p>A list of technologies and tools I'm comfortable with.</p>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" required></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+    </main>
+
+
+<!-- Typed.js for animated typing text -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  var typed = new Typed(".typed-text", {
+    strings: ["Engineer", "Learner", "Logistics Explorer"],
+    typeSpeed: 50,
+    backSpeed: 25,
+    loop: true
+  });
+</script>
+</body>
+
+</html>
