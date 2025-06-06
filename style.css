@@ -1,4 +1,3 @@
-/* Reset and base styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -22,7 +21,6 @@ ul {
   padding-left: 20px;
 }
 
-/* Header Navigation */
 header {
   background: #ffffff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -30,7 +28,6 @@ header {
   top: 0;
   z-index: 1000;
 }
-
 nav ul {
   list-style: none;
   display: flex;
@@ -39,24 +36,20 @@ nav ul {
   margin: 0;
   padding: 15px 0;
 }
-
 nav ul li a {
   text-decoration: none;
   color: #444;
   font-weight: bold;
 }
-
 nav ul li a:hover {
   color: #0077cc;
 }
 
-/* Hero Section */
 .hero-section {
   text-align: center;
   padding: 80px 20px;
   background: #e3f2fd;
 }
-
 .profile-picture {
   width: 150px;
   height: 150px;
@@ -64,27 +57,22 @@ nav ul li a:hover {
   object-fit: cover;
   margin-bottom: 20px;
 }
-
 .main-heading {
   font-size: 2.2rem;
   margin-bottom: 10px;
 }
-
 .sub-heading {
   font-size: 1.2rem;
   color: #555;
 }
-
 .quote {
   font-style: italic;
   margin-top: 10px;
   color: #666;
 }
-
 .button-container {
   margin-top: 20px;
 }
-
 .btn {
   background-color: #0077cc;
   color: #fff;
@@ -95,14 +83,42 @@ nav ul li a:hover {
   display: inline-block;
   transition: background 0.3s ease;
 }
-
 .btn:hover {
   background-color: #005fa3;
 }
 
-/* Gallery Highlights Section */
-.gallery-highlights {
-  text-align: center;
+.timeline-item {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #fff;
+  border-left: 4px solid #0077cc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-radius: 6px;
+}
+.timeline-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #0077cc;
+}
+.timeline-item p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.exp-card, .service-card {
+  background: #fff;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 800px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .gallery-description {
@@ -111,12 +127,10 @@ nav ul li a:hover {
   margin: 0 auto 30px;
   color: #555;
 }
-
 .gallery-list {
   list-style-type: none;
   padding: 0;
 }
-
 .gallery-list li {
   opacity: 0;
   transform: translateY(20px);
@@ -129,7 +143,6 @@ nav ul li a:hover {
   transform: translateY(0);
 }
 
-/* Contact Form */
 form {
   max-width: 500px;
   margin: 0 auto;
@@ -154,33 +167,4 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #005fa3;
 }
-
-/* Milestone Cards */
-.milestone-card {
-  max-width: 400px;
-  margin: 20px auto;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  border-radius: 12px;
-  overflow: hidden;
-  background: #fff;
-  transition: transform 0.3s ease;
-}
-.milestone-card:hover {
-  transform: scale(1.02);
-}
-.milestone-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.milestone-card .caption {
-  padding: 15px;
-  text-align: center;
-}
-.milestone-card .caption h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-.milestone-card .caption p {
-  font-size: 0.95rem;
-  color:
+""")
