@@ -1,94 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satya Manikumar Chode - Home</title>
-    <link rel="stylesheet" href="style.css">
-<style>html { scroll-behavior: smooth; }</style>
-</head>
-<body>
+# Generate the updated Gallery section with animated text content (no images yet) using a smooth scroll/Apple-style layout
+from pathlib import Path
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">My Journey</a></li>
-                <li><a href="#">Timeline</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+# Load the last updated HTML file
+index_html_path = Path("/mnt/data/index-home-updated.html")
+html = index_html_path.read_text()
 
-    <main>
-        
-<section class="hero-section" id="home">
-    <div class="hero-container">
-        <img src="profile-picture.jpg" alt="Satya Manikumar Chode" class="profile-picture">
-        <h1 class="main-heading">Satya Manikumar Chode</h1>
-        <p class="sub-heading typed-text">Engineer | Learner | Logistics Explorer</p>
-        <p class="quote">“From satellites to supply chains — a story of continuous learning and transformation.”</p>
-        <div class="button-container">
-            <a href="#my-journey" class="btn">Read My Journey</a>
-            <a href="https://www.linkedin.com/in/YOUR-USERNAME" target="_blank" class="btn">View Resume/LinkedIn</a>
-        </div>
-    </div>
+# Define gallery text-based highlights with scroll animation using intersection observer pattern
+gallery_html = """
+<section id="gallery" class="section gallery-highlights">
+  <h2>Gallery Highlights</h2>
+  <p class="gallery-description">Visual snapshots from various chapters of my journey. More images can be found within each 'My Journey' chapter entry.</p>
+  <ul class="gallery-list">
+    <li>Sathyabama University Logo</li>
+    <li>Glider Competition Award</li>
+    <li>University of Greenwich Logo</li>
+    <li>Dissertation Research Setup</li>
+    <li>Exploring London</li>
+    <li>Cultural Event in UK</li>
+    <li>Networking Meetup</li>
+    <li>Online Certification Screen</li>
+  </ul>
 </section>
+"""
 
-<section id="my-journey" class="section">
-    <h2>My Journey</h2>
-    <p>Coming soon: A brief story of my educational and career journey.</p>
-</section>
+# Add CSS for smooth scroll animation via classes
+gallery_style = """
+/* Gallery Highlights Section */
+.gallery-highlights {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+}
+.gallery-highlights h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.gallery-description {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #555;
+}
+.gallery-list {
+  list-style-type: none;
+  padding: 0;
+}
+.gallery-list li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  font-size: 1.1rem;
+  margin: 12px 0;
+}
+.gallery-list li.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+"""
 
-<section id="timeline" class="section">
-    <h2>Timeline</h2>
-    <p>Here you'll see a timeline of major life and career events.</p>
-</section>
+# Inject style.css update instruction
+style_path = Path("/mnt/data/style.css")
+style_content = style_path.read_text()
+style_content += "\n" + gallery_style
+style_path.write_text(style_content)
 
-<section id="gallery" class="section">
-    <h2>Gallery</h2>
-    <p>A photo gallery to showcase projects, events, and achievements.</p>
-</section>
+# Insert gallery section by replacing placeholder #gallery section
+import re
+html = re.sub(r'<section id="gallery".*?</section>', gallery_html, html, flags=re.DOTALL)
 
-<section id="about-me" class="section">
-    <h2>About Me</h2>
-    <p>This section will describe who I am, my passions, and my goals.</p>
-</section>
-
-<section id="skills" class="section">
-    <h2>Skills</h2>
-    <p>A list of technologies and tools I'm comfortable with.</p>
-</section>
-
-<section id="contact" class="section">
-    <h2>Contact</h2>
-    <form>
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br>
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" required></textarea><br>
-        <button type="submit">Send</button>
-    </form>
-</section>
-
-    </main>
-
-
-<!-- Typed.js for animated typing text -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+# Add intersection observer script before </body>
+gallery_script = """
 <script>
-  var typed = new Typed(".typed-text", {
-    strings: ["Engineer", "Learner", "Logistics Explorer"],
-    typeSpeed: 50,
-    backSpeed: 25,
-    loop: true
+  const galleryItems = document.querySelectorAll('.gallery-list li');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  galleryItems.forEach(item => {
+    observer.observe(item);
   });
 </script>
 </body>
+"""
+html = html.replace("</body>", gallery_script)
 
-</html>
+# Save updated file
+output_path = "/mnt/data/index-gallery-updated.html"
+Path(output_path).write_text(html)
+output_path
