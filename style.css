@@ -28,6 +28,7 @@ header {
   top: 0;
   z-index: 1000;
 }
+
 nav ul {
   list-style: none;
   display: flex;
@@ -36,101 +37,118 @@ nav ul {
   margin: 0;
   padding: 15px 0;
 }
+
 nav ul li a {
   text-decoration: none;
   color: #444;
   font-weight: bold;
 }
+
 nav ul li a:hover {
   color: #0077cc;
+  text-decoration: underline;
 }
 
 .hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
   text-align: center;
-  padding: 80px 20px;
-  background: #e3f2fd;
+  padding: 100px 20px;
 }
+
+.hero-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .profile-picture {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  object-fit: cover;
   margin-bottom: 20px;
+  object-fit: cover;
+  border: 5px solid white;
 }
+
 .main-heading {
-  font-size: 2.2rem;
+  font-size: 3rem;
   margin-bottom: 10px;
+  opacity: 0;
 }
+
 .sub-heading {
-  font-size: 1.2rem;
-  color: #555;
-}
-.quote {
-  font-style: italic;
-  margin-top: 10px;
-  color: #666;
-}
-.button-container {
-  margin-top: 20px;
-}
-.btn {
-  background-color: #0077cc;
-  color: #fff;
-  padding: 10px 20px;
-  margin: 10px;
-  text-decoration: none;
-  border-radius: 5px;
-  display: inline-block;
-  transition: background 0.3s ease;
-}
-.btn:hover {
-  background-color: #005fa3;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 20px;
+  opacity: 0;
 }
 
-.timeline-item {
+.about {
+  font-size: 1.2rem;
+  line-height: 1.6;
   margin-bottom: 30px;
-  padding: 20px;
-  background: #fff;
-  border-left: 4px solid #0077cc;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  border-radius: 6px;
-}
-.timeline-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #0077cc;
-}
-.timeline-item p {
-  font-size: 0.95rem;
-  color: #444;
+  opacity: 0;
 }
 
-.exp-card, .service-card {
-  background: #fff;
-  padding: 20px;
-  margin: 15px auto;
-  max-width: 800px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  border-radius: 8px;
-}
-
-.services-grid {
+.button-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.gallery-description {
-  font-size: 1rem;
-  max-width: 600px;
-  margin: 0 auto 30px;
-  color: #555;
+.btn {
+  background-color: white;
+  color: #667eea;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
+
+.btn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#my-journey h2, #experience h2, #services h2, #gallery h2, #contact h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.journey-content, .experience-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.services-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.services-list li {
+  background: #ffffff;
+  border-left: 4px solid #0077cc;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-list li:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
 .gallery-list {
   list-style-type: none;
   padding: 0;
 }
+
 .gallery-list li {
   opacity: 0;
   transform: translateY(20px);
@@ -138,6 +156,7 @@ nav ul li a:hover {
   font-size: 1.1rem;
   margin: 12px 0;
 }
+
 .gallery-list li.visible {
   opacity: 1;
   transform: translateY(0);
@@ -148,6 +167,7 @@ form {
   margin: 0 auto;
   text-align: left;
 }
+
 input, textarea {
   width: 100%;
   padding: 10px;
@@ -156,6 +176,7 @@ input, textarea {
   border: 1px solid #ccc;
   font-size: 1rem;
 }
+
 button[type="submit"] {
   background-color: #0077cc;
   color: #fff;
@@ -164,7 +185,32 @@ button[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
 }
+
 button[type="submit"]:hover {
   background-color: #005fa3;
 }
-""")
+
+/* Animation keyframes and classes */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(40px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+.animated-fade-in {
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.animated-slide-up {
+  animation: slideUp 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation-delay: .3s;
+}
+
+.animated-fade-in-delay {
+  animation: fadeIn 1.5s ease-out forwards;
+  animation-delay: .8s;
+}
