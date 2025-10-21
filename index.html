@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
 <header>
   <nav>
     <ul>
@@ -20,121 +19,21 @@
     </ul>
   </nav>
 </header>
-
 <main>
   <section class="hero-section" id="home">
     <div class="hero-container">
       <img src="profile-picture.jpg" alt="Satya Manikumar Chode" class="profile-picture" />
-      <h1 class="main-heading">Satya Manikumar Chode</h1>
-      <p class="sub-heading typed-text">Engineer | Learner | Logistics Explorer</p>
-      <p class="quote">“From satellites to supply chains — a story of continuous learning and transformation.”</p>
+      <div class="hero-section">
+        <h1 class="main-heading animated-fade-in">Satya Manikumar Chode</h1>
+        <h2 class="sub-heading animated-slide-up">Engineering Management Graduate | SAP ERP & Supply Chain Certified</h2>
+        <p class="about animated-fade-in-delay">Passionate about logistics, operations, and tech innovation. Bringing hands-on experience from Tesco and Evri in warehouse operations, logistics coordination, and supply chain optimization. Committed to continuous learning and driving operational excellence through data-driven solutions and ERP systems.</p>
+      </div>
       <div class="button-container">
         <a href="#my-journey" class="btn">Read My Journey</a>
         <a href="https://www.linkedin.com/in/satya-manikumar-chode-865a55215" target="_blank" class="btn">View Resume/LinkedIn</a>
       </div>
     </div>
   </section>
-
-  <section id="my-journey" class="section">
-    <h2>My Journey</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>🎓 2017–2021 – B.E. Aeronautical Engineering</h3>
-        <p><strong>Sathyabama University</strong><br />
-        Built fundamentals in aerospace systems. Participated in robotics events and mini projects.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>🎓 2022–2023 – MSc Engineering Management</h3>
-        <p><strong>University of Greenwich</strong><br />
-        Dissertation on warehouse simulation using AnyLogic. Focused on logistics and operations.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>🛒 2023–Present – Logistics & Inventory Colleague</h3>
-        <p><strong>Tesco – UK</strong><br />
-        Managed inventory operations, SAP ERP transactions, and logistics improvements.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="section">
-    <h2>Experience</h2>
-    <div class="exp-card">
-      <h3>Logistics Colleague</h3>
-      <p><strong>Tesco – UK</strong> (2023–Present)</p>
-      <ul>
-        <li>Handled inventory, SAP entries, and fulfillment processes.</li>
-        <li>Contributed to warehouse layout efficiency and cycle-count improvements.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="services" class="section">
-    <h2>Services I Offer</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>📦 Logistics & Inventory Analytics</h3>
-        <p>Process optimization, cycle counting, and operational support.</p>
-      </div>
-      <div class="service-card">
-        <h3>📊 Warehouse Simulation</h3>
-        <p>Modeling layouts and simulating workflows using Arena/AnyLogic.</p>
-      </div>
-      <div class="service-card">
-        <h3>📄 Resume & LinkedIn Review</h3>
-        <p>Help fellow graduates improve job applications and professional profiles.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="gallery" class="section gallery-highlights">
-    <h2>Gallery Highlights</h2>
-    <p class="gallery-description">Visual snapshots from various chapters of my journey. More images can be found within each 'My Journey' chapter entry.</p>
-    <ul class="gallery-list">
-      <li>Sathyabama University Logo</li>
-      <li>Glider Competition Award</li>
-      <li>University of Greenwich Logo</li>
-      <li>Dissertation Research Setup</li>
-      <li>Exploring London</li>
-      <li>Cultural Event in UK</li>
-      <li>Networking Meetup</li>
-      <li>Online Certification Screen</li>
-    </ul>
-  </section>
-
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <form action="mailto:manikumarc32@gmail.com" method="post" enctype="text/plain">
-      <label for="name">Name:</label><br />
-      <input type="text" id="name" name="name" required /><br />
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" required /><br />
-      <label for="message">Message:</label><br />
-      <textarea id="message" name="message" required></textarea><br />
-      <button type="submit">Send</button>
-    </form>
-  </section>
 </main>
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  var typed = new Typed(".typed-text", {
-    strings: ["Engineer", "Learner", "Logistics Explorer"],
-    typeSpeed: 50,
-    backSpeed: 25,
-    loop: true
-  });
-
-  const galleryItems = document.querySelectorAll('.gallery-list li');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  galleryItems.forEach(item => observer.observe(item));
-</script>
-
 </body>
 </html>
