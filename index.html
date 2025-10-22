@@ -1,39 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Satya Manikumar Chode – Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#my-journey">My Journey</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
+  <!-- Animated Sidebar Navigation -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h3>SM Chode</h3>
+      <button class="close-btn" onclick="toggleSidebar()">×</button>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="#home" onclick="toggleSidebar()">Home</a></li>
+      <li><a href="#about" onclick="toggleSidebar()">About</a></li>
+      <li><a href="#experience" onclick="toggleSidebar()">Experience</a></li>
+      <li><a href="#education" onclick="toggleSidebar()">Education</a></li>
+      <li><a href="#skills" onclick="toggleSidebar()">Skills</a></li>
+      <li><a href="#certifications" onclick="openCertificationsPopup()">Certifications</a></li>
+      <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
     </ul>
   </nav>
-</header>
-<main>
-  <section class="hero-section" id="home">
-    <div class="hero-container">
-      <img src="profile-picture.jpg" alt="Satya Manikumar Chode" class="profile-picture" />
-      <div class="hero-section">
-        <h1 class="main-heading animated-fade-in">Satya Manikumar Chode</h1>
-        <h2 class="sub-heading animated-slide-up">Engineering Management Graduate | SAP ERP & Supply Chain Certified</h2>
-        <p class="about animated-fade-in-delay">Passionate about logistics, operations, and tech innovation. Bringing hands-on experience from Tesco and Evri in warehouse operations, logistics coordination, and supply chain optimization. Committed to continuous learning and driving operational excellence through data-driven solutions and ERP systems.</p>
-      </div>
-      <div class="button-container">
-        <a href="#my-journey" class="btn">Read My Journey</a>
-        <a href="https://www.linkedin.com/in/satya-manikumar-chode-865a55215" target="_blank" class="btn">View Resume/LinkedIn</a>
+
+  <!-- Menu Toggle Button -->
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+  <!-- Certifications Popup -->
+  <div id="certificationsPopup" class="popup-overlay">
+    <div class="popup-content">
+      <button class="popup-close" onclick="closeCertificationsPopup()">×</button>
+      <h2>Certifications</h2>
+      <div class="certifications-grid">
+        <div class="cert-card">
+          <h3>SAP S/4HANA Supply Chain</h3>
+          <p>Advanced certification in SAP ERP systems</p>
+          <span class="cert-date">2024</span>
+        </div>
+        <div class="cert-card">
+          <h3>Logistics & Operations Management</h3>
+          <p>Professional certification</p>
+          <span class="cert-date">2023</span>
+        </div>
+        <div class="cert-card">
+          <h3>Warehouse Management Systems</h3>
+          <p>Industry standard certification</p>
+          <span class="cert-date">2023</span>
+        </div>
       </div>
     </div>
-  </section>
-</main>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-container">
+        <img src="profile-picture.jpg" alt="Satya Manikumar Chode" class="profile-picture">
+        <div class="hero-text">
+          <h1 class="main-heading">Satya Manikumar Chode</h1>
+          <h2 class="sub-heading">Engineering Management Graduate | SAP ERP & Supply Chain Professional</h2>
+          <p class="tagline">Transforming Operations Through Innovation & Excellence</p>
+        </div>
+      </div>
+      <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <p class="about-text">
+            Dynamic Engineering Management graduate with a proven track record in logistics, supply chain optimization, and operational excellence. Currently contributing to Evri's warehouse operations while bringing valuable experience from Tesco's fast-paced environment.
+          </p>
+          <p class="about-text">
+            Certified in SAP S/4HANA Supply Chain Management, I combine technical expertise with hands-on operational experience to drive efficiency and innovation. Passionate about leveraging ERP systems and data-driven insights to solve complex supply chain challenges.
+          </p>
+          <p class="about-text">
+            Committed to continuous learning and professional development, with a focus on emerging technologies in logistics and operations management.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section class="experience-section" id="experience">
+      <div class="container">
+        <h2 class="section-title">Professional Journey</h2>
+        <div class="timeline">
+          
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2024 - Present</div>
+              <h3>Warehouse Operative</h3>
+              <h4>Evri (Hermes)</h4>
+              <ul>
+                <li>Managing high-volume parcel operations in dynamic warehouse environment</li>
+                <li>Ensuring efficient sorting and processing of packages to meet delivery targets</li>
+                <li>Maintaining quality standards and safety protocols</li>
+                <li>Contributing to operational efficiency improvements</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2023 - 2024</div>
+              <h3>Customer Delivery Assistant</h3>
+              <h4>Tesco</h4>
+              <ul>
+                <li>Managed end-to-end delivery operations ensuring customer satisfaction</li>
+                <li>Optimized delivery routes for efficiency and timely service</li>
+                <li>Handled customer interactions with professionalism and care</li>
+                <li>Maintained delivery standards and adhered to safety protocols</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2021 - 2023</div>
+              <h3>Stock Control Assistant</h3>
+              <h4>Tesco</h4>
+              <ul>
+                <li>Managed inventory accuracy and stock replenishment processes</li>
+                <li>Conducted regular stock audits and cycle counts</li>
+                <li>Collaborated with teams to minimize stock discrepancies</li>
+                <li>Utilized warehouse management systems for inventory tracking</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2020 - 2021</div>
+              <h3>Online Shopper</h3>
+              <h4>Tesco</h4>
+              <ul>
+                <li>Fulfilled online customer orders with high accuracy</li>
+                <li>Ensured product quality and customer satisfaction</li>
+                <li>Managed time efficiently to meet order deadlines</li>
+                <li>Maintained knowledge of store layout and product locations</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section" id="education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+          
+          <div class="education-card">
+            <div class="edu-icon">🎓</div>
+            <h3>MSc Engineering Management</h3>
+            <h4>University of Greenwich</h4>
+            <p class="edu-date">2023 - 2024</p>
+            <p class="edu-description">
+              Advanced studies in operations management, supply chain strategy, project management, and business analytics. Focus on integrating engineering principles with business management.
+            </p>
+          </div>
+
+          <div class="education-card">
+            <div class="edu-icon">🎓</div>
+            <h3>Bachelor's in Engineering</h3>
+            <h4>Previous Institution</h4>
+            <p class="edu-date">2016 - 2020</p>
+            <p class="edu-description">
+              Foundation in engineering principles, technical problem-solving, and analytical thinking. Built strong foundation for advanced studies in management.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills & Expertise</h2>
+        <div class="skills-categories">
+          
+          <div class="skill-category">
+            <h3>Technical Skills</h3>
+            <div class="skills-grid">
+              <div class="skill-item">SAP S/4HANA Supply Chain</div>
+              <div class="skill-item">ERP Systems</div>
+              <div class="skill-item">Warehouse Management Systems</div>
+              <div class="skill-item">Data Analysis</div>
+              <div class="skill-item">Microsoft Office Suite</div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Operations & Logistics</h3>
+            <div class="skills-grid">
+              <div class="skill-item">Supply Chain Management</div>
+              <div class="skill-item">Inventory Control</div>
+              <div class="skill-item">Warehouse Operations</div>
+              <div class="skill-item">Logistics Coordination</div>
+              <div class="skill-item">Process Optimization</div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Management & Leadership</h3>
+            <div class="skills-grid">
+              <div class="skill-item">Project Management</div>
+              <div class="skill-item">Team Collaboration</div>
+              <div class="skill-item">Problem Solving</div>
+              <div class="skill-item">Quality Management</div>
+              <div class="skill-item">Continuous Improvement</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+          <p class="contact-intro">
+            I'm always interested in new opportunities and collaborations. Feel free to reach out!
+          </p>
+          <div class="contact-methods">
+            <a href="https://www.linkedin.com/in/satya-manikumar-chode-865a55215" target="_blank" class="contact-btn">
+              <span class="btn-icon">💼</span>
+              <span>LinkedIn Profile</span>
+            </a>
+            <a href="mailto:satya.chode@example.com" class="contact-btn">
+              <span class="btn-icon">📧</span>
+              <span>Email Me</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Satya Manikumar Chode. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- JavaScript for Interactions -->
+  <script>
+    // Sidebar Toggle
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('active');
+    }
+
+    // Certifications Popup
+    function openCertificationsPopup() {
+      toggleSidebar();
+      document.getElementById('certificationsPopup').classList.add('active');
+    }
+
+    function closeCertificationsPopup() {
+      document.getElementById('certificationsPopup').classList.remove('active');
+    }
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#certifications') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Scroll indicator
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+      scrollIndicator.addEventListener('click', () => {
+        document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  </script>
+
 </body>
 </html>
