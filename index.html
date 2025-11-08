@@ -59,8 +59,7 @@
       <div class="hero-container">
         <img class="profile-picture" alt="SMK Portfolio" />
         <div class="hero-text">
-          <h1 class="main-heading">SMK Portfolio</h1>
-          <h2 class="sub-heading">Engineering Management Graduate | SAP ERP &amp; Supply Chain Professional</h2>
+            <h1 class="main-heading" id="animated-name">SMK Portfolio</h1>          <h2 class="sub-heading">Engineering Management Graduate | SAP ERP &amp; Supply Chain Professional</h2>
           <p class="tagline">Transforming Operations Through Innovation &amp; Excellence</p>
         </div>
       </div>
@@ -258,6 +257,37 @@
 
   <!-- JavaScript for Interactions -->
   <script>
+
+        // SVG Name Animation
+    window.addEventListener('DOMContentLoaded', () => {
+        const nameElement = document.getElementById('animated-name');
+        if (nameElement) {
+            // Create SVG namespace
+            const svgNS = 'http://www.w3.org/2000/svg';
+            const svg = document.createElementNS(svgNS, 'svg');
+            svg.setAttribute('viewBox', '0 0 800 100');
+            svg.style.position = 'absolute';
+            svg.style.top = '0';
+            svg.style.left = '0';
+            svg.style.width = '100%';
+            svg.style.height = '100%';
+            svg.style.pointerEvents = 'none';
+            
+            // Create animated line
+            const line = document.createElementNS(svgNS, 'line');
+            line.setAttribute('x1', '0');
+            line.setAttribute('y1', '50');
+            line.setAttribute('x2', '800');
+            line.setAttribute('y2', '50');
+            line.setAttribute('stroke', '#00d9ff');
+            line.setAttribute('stroke-width', '2');
+            line.style.opacity = '0.7';            
+            svg.appendChild(line);
+            nameElement.style.position = 'relative';
+            nameElement.appendChild(svg);
+        }
+    });
+
     // Sidebar Toggle
     function toggleSidebar() {
       const sidebar = document.getElementById('sidebar');
