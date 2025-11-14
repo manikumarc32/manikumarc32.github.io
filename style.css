@@ -381,4 +381,20 @@ footer {
     width: 95%;
     padding: 20px;
   }
+
+  /* Certification icon styles */
+.cert-icon {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.cert-icon-large {
+  font-size: 4em;
+  margin-bottom: 20px;
+}
+
+.popup-icon-placeholder {
+  font-size: 4em;
+  margin-bottom: 20px;
+}
 }
