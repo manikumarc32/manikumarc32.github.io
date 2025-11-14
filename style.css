@@ -286,3 +286,47 @@ footer a:hover {
     font-size: 0.95em;
   }
 }
+
+/* Popup Images Styling */
+.popup-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+/* Images folder placeholder for reference */
+/* Create /images folder and add: robotics.jpg, arduino.jpg, drone.jpg, pushpak.jpg */
+
+/* Robotics Section Responsive */
+#robotics-achievements {
+  background: #f9f9f9;
+}
+
+#robotics-achievements h2 {
+  color: #333;
+}
+
+/* Ensure achievement-list is visible */
+.achievement-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Additional mobile optimization */
+@media (max-width: 768px) {
+  .popup-img {
+    max-width: 100%;
+  }
+  
+  .popup-content {
+    width: 95% !important;
+    max-width: none;
+  }
+}
