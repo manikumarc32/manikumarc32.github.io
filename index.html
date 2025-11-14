@@ -38,23 +38,23 @@
     <h2>Certifications</h2>
     <div class="cert-gallery">
       <div class="cert-card" onclick="openCertPopup('aws')">
-        <img src="images/aws-cert.jpg" alt="AWS Certificate" class="cert-img">
+        <div class="cert-icon">☁️</div>
         <p>AWS Internship Certificate</p>
       </div>
       <div class="cert-card" onclick="openCertPopup('sap')">
-        <img src="images/sap-cert.jpg" alt="SAP ERP" class="cert-img">
+        <div class="cert-icon">📊</div>
         <p>SAP ERP Essential Training</p>
       </div>
       <div class="cert-card" onclick="openCertPopup('inventory')">
-        <img src="images/inventory-cert.jpg" alt="Inventory Management" class="cert-img">
+        <div class="cert-icon">📦</div>
         <p>Inventory Management Foundations</p>
       </div>
       <div class="cert-card" onclick="openCertPopup('operations')">
-        <img src="images/operations-cert.jpg" alt="Operations Management" class="cert-img">
+        <div class="cert-icon">⚙️</div>
         <p>Operations Management Foundations</p>
       </div>
       <div class="cert-card" onclick="openCertPopup('supplychain')">
-        <img src="images/supplychain-cert.jpg" alt="Supply Chain" class="cert-img">
+        <div class="cert-icon">🚚</div>
         <p>Supply Chain Foundations</p>
       </div>
     </div>
@@ -63,41 +63,42 @@
   <!-- Certification Popups (View Only) -->
   <div id="aws-popup" class="cert-popup">
     <div class="cert-popup-content">
-      <span class="close-btn" onclick="closeCertPopup('aws')">&times;</span>
+      <span class="close-btn" onclick="closeCertPopup('aws')">×</span>
       <h3>AWS Internship Certificate</h3>
-      <img src="images/aws-cert.jpg" alt="AWS Certificate">
+      <div class="cert-icon-large">☁️</div>
+      <p>AWS Internship - Successfully completed.</p>
     </div>
   </div>
-
   <div id="sap-popup" class="cert-popup">
     <div class="cert-popup-content">
-      <span class="close-btn" onclick="closeCertPopup('sap')">&times;</span>
+      <span class="close-btn" onclick="closeCertPopup('sap')">×</span>
       <h3>SAP ERP Essential Training</h3>
-      <img src="images/sap-cert.jpg" alt="SAP ERP">
+      <div class="cert-icon-large">📊</div>
+      <p>SAP ERP - Successfully completed essential training.</p>
     </div>
   </div>
-
   <div id="inventory-popup" class="cert-popup">
     <div class="cert-popup-content">
-      <span class="close-btn" onclick="closeCertPopup('inventory')">&times;</span>
+      <span class="close-btn" onclick="closeCertPopup('inventory')">×</span>
       <h3>Inventory Management Foundations</h3>
-      <img src="images/inventory-cert.jpg" alt="Inventory Management">
+      <div class="cert-icon-large">📦</div>
+      <p>Inventory Management - LinkedIn Learning Certification.</p>
     </div>
   </div>
-
   <div id="operations-popup" class="cert-popup">
     <div class="cert-popup-content">
-      <span class="close-btn" onclick="closeCertPopup('operations')">&times;</span>
+      <span class="close-btn" onclick="closeCertPopup('operations')">×</span>
       <h3>Operations Management Foundations</h3>
-      <img src="images/operations-cert.jpg" alt="Operations Management">
+      <div class="cert-icon-large">⚙️</div>
+      <p>Operations Management - LinkedIn Learning Certification.</p>
     </div>
   </div>
-
   <div id="supplychain-popup" class="cert-popup">
     <div class="cert-popup-content">
-      <span class="close-btn" onclick="closeCertPopup('supplychain')">&times;</span>
+      <span class="close-btn" onclick="closeCertPopup('supplychain')">×</span>
       <h3>Supply Chain Foundations</h3>
-      <img src="images/supplychain-cert.jpg" alt="Supply Chain">
+      <div class="cert-icon-large">🚚</div>
+      <p>Supply Chain - LinkedIn Learning Certification.</p>
     </div>
   </div>
 
@@ -123,36 +124,33 @@
   <!-- Achievement Popups -->
   <div id="robotics" class="popup">
     <div class="popup-content">
-      <span class="close" onclick="closePopup('robotics')">&times;</span>
+      <span class="close" onclick="closePopup('robotics')">×</span>
       <h3>🤠 Robotics Workshop (2019)</h3>
-      <img src="images/robotics.jpg" alt="Robotics Workshop" class="popup-img">
+      <img src="IMG20190819192738.jpg" alt="Robotics Workshop" class="popup-img">
       <p>Created a four-legged robot powered by a connected power bank, programmed to move after coding.</p>
     </div>
   </div>
-
   <div id="arduino" class="popup">
     <div class="popup-content">
-      <span class="close" onclick="closePopup('arduino')">&times;</span>
+      <span class="close" onclick="closePopup('arduino')">×</span>
       <h3>⚙️ Arduino Robotics Competition</h3>
-      <img src="images/arduino.jpg" alt="Arduino Competition" class="popup-img">
+      <img src="IMG20190821120829.jpg" alt="Arduino Competition" class="popup-img">
       <p>Successfully competed in a robotics competition utilizing Arduino software and microcontroller programming.</p>
     </div>
   </div>
-
   <div id="drone" class="popup">
     <div class="popup-content">
-      <span class="close" onclick="closePopup('drone')">&times;</span>
+      <span class="close" onclick="closePopup('drone')">×</span>
       <h3>🚁 Drone Building Competition</h3>
-      <img src="images/drone.jpg" alt="Drone Competition" class="popup-img">
+      <div class="popup-icon-placeholder">🚁</div>
       <p>Participated in a drone building competition, involving assembly, calibration, and flight testing.</p>
     </div>
   </div>
-
   <div id="pushpak" class="popup">
     <div class="popup-content">
-      <span class="close" onclick="closePopup('pushpak')">&times;</span>
+      <span class="close" onclick="closePopup('pushpak')">×</span>
       <h3>🏆 Pushpak 2K19 – First Prize</h3>
-      <img src="images/pushpak.jpg" alt="Pushpak Competition" class="popup-img">
+      <img src="pushpak.jpg" alt="Pushpak Competition" class="popup-img">
       <p>Secured the first prize in the Pushpak 2K19 competition held at college. A prestigious engineering competition showcasing innovation and technical excellence.</p>
     </div>
   </div>
@@ -166,7 +164,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Satya Manikumar Chode. All rights reserved.</p>
+    <p>© 2025 Satya Manikumar Chode. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
