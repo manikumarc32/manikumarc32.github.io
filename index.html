@@ -12,6 +12,7 @@
     <p>Warehouse & Logistics Professional | Aspiring Operations Leader</p>
   </header>
 
+  <!-- ABOUT SECTION -->
   <section id="about">
     <h2>About Me</h2>
     <div class="profile-container">
@@ -21,6 +22,7 @@
     <p>Currently seeking full-time opportunities in logistics, operations, or supply chain management in Kent and Medway. Open to relocate within the UK.</p>
   </section>
 
+  <!-- KEY ACHIEVEMENTS SECTION (Logistics) -->
   <section id="achievements">
     <h2>Key Achievements</h2>
     <div class="achievement-list">
@@ -39,7 +41,7 @@
     </div>
   </section>
 
-  <!-- Achievement Popups -->
+  <!-- ACHIEVEMENT POPUPS (Logistics) -->
   <div id="warehouse" class="popup">
     <div class="popup-content">
       <span class="close" onclick="closePopup('warehouse')">&times;</span>
@@ -96,6 +98,63 @@
     </div>
   </div>
 
+  <!-- ROBOTICS & COMPETITIONS SECTION (WITH IMAGES) -->
+  <section id="robotics-achievements">
+    <h2>Robotics & Competitions</h2>
+    <div class="achievement-list">
+      <div class="achievement" onclick="openPopup('robotics')">
+        🤠 Robotics Workshop (2019)
+      </div>
+      <div class="achievement" onclick="openPopup('arduino')">
+        ⚙️ Arduino Robotics Competition
+      </div>
+      <div class="achievement" onclick="openPopup('drone')">
+        🚁 Drone Building Competition
+      </div>
+      <div class="achievement" onclick="openPopup('pushpak')">
+        🏆 Pushpak 2K19 – First Prize
+      </div>
+    </div>
+  </section>
+
+  <!-- ROBOTICS POPUPS (WITH IMAGES FROM /images FOLDER) -->
+  <div id="robotics" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('robotics')">&times;</span>
+      <h3>🤠 Robotics Workshop (2019)</h3>
+      <img src="images/robotics.jpg" alt="Robotics Workshop" class="popup-img">
+      <p>Created a four-legged robot powered by a connected power bank, programmed to move after coding.</p>
+    </div>
+  </div>
+
+  <div id="arduino" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('arduino')">&times;</span>
+      <h3>⚙️ Arduino Robotics Competition</h3>
+      <img src="images/arduino.jpg" alt="Arduino Competition" class="popup-img">
+      <p>Successfully competed in a robotics competition utilizing Arduino software and microcontroller programming.</p>
+    </div>
+  </div>
+
+  <div id="drone" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('drone')">&times;</span>
+      <h3>🚁 Drone Building Competition</h3>
+      <img src="images/drone.jpg" alt="Drone Competition" class="popup-img">
+      <p>Participated in a drone building competition, involving assembly, calibration, and flight testing of a multi-rotor drone.</p>
+    </div>
+  </div>
+
+  <div id="pushpak" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('pushpak')">&times;</span>
+      <h3>🏆 Pushpak 2K19 – First Prize</h3>
+      <img src="images/pushpak.jpg" alt="Pushpak Competition" class="popup-img">
+      <p>Secured the first prize in the Pushpak 2K19 competition held at college. This was a prestigious engineering competition showcasing innovation and technical excellence.</p>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS SECTION -->
   <section id="certifications">
     <h2>Certifications</h2>
     <div class="cert-list">
@@ -118,38 +177,58 @@
     </div>
   </section>
 
+  <!-- RESUME SECTION -->
   <section id="resume">
     <h2>Resume</h2>
     <p><a href="#" class="download-btn">Download My CV (PDF)</a></p>
   </section>
 
+  <!-- BLOG SECTION -->
   <section id="blog">
     <h2>Blog</h2>
     <article>
       <h3>My Journey into Logistics & Tech</h3>
-      <p>Sharing insights from my career transition from warehouse operations to exploring data-driven supply chain solutions...</p>
+      <p>Sharing insights from my career transition from warehouse operations to exploring data-driven supply chain solutions and emerging technologies...</p>
       <p><em>Coming soon</em></p>
     </article>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>☏️ <a href="mailto:manikumarc32@gmail.com">manikumarc32@gmail.com</a> | 📍 Maidstone, UK</p>
     <p><a href="https://www.linkedin.com/in/satya-manikumar-chode" target="_blank">LinkedIn</a> | <a href="https://github.com/manikumarc32" target="_blank">GitHub</a></p>
   </footer>
 
+  <!-- JAVASCRIPT FOR POPUPS -->
   <script>
     function openPopup(id) {
-      document.getElementById(id).style.display = "flex";
+      const popup = document.getElementById(id);
+      if (popup) {
+        popup.style.display = "flex";
+      }
     }
 
     function closePopup(id) {
-      document.getElementById(id).style.display = "none";
+      const popup = document.getElementById(id);
+      if (popup) {
+        popup.style.display = "none";
+      }
     }
 
     // Close popup when clicking outside the content
     window.addEventListener('click', function(event) {
       if (event.target.classList.contains('popup')) {
         event.target.style.display = "none";
+      }
+    });
+
+    // Close popup with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const popups = document.querySelectorAll('.popup');
+        popups.forEach(popup => {
+          popup.style.display = "none";
+        });
       }
     });
   </script>
