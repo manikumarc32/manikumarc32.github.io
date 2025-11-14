@@ -1,65 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satya Manikumar Chode | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satya Manikumar Chode | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Satya Manikumar Chode</h1>
-        <p>Warehouse & Logistics Professional | Aspiring Operations Leader</p>
-    </header>
+  <header>
+    <h1>Satya Manikumar Chode</h1>
+    <p>Warehouse & Logistics Professional | Aspiring Operations Leader</p>
+  </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-                <div class="profile-container">
-            <img src="p8fa46682-47eb-447d-bc7a-352f2ca07d24.png" alt="Satya Manikumar Chode" class="profile-photo">
-        </div>
-        <p>Dedicated and results-driven professional with a Master's degree in Engineering Management (First Class Honours) and hands-on experience in warehouse operations, logistics, ERP systems (SAP), and supply chain optimization.</p>
-        <p>Currently seeking full-time opportunities in logistics, operations, or supply chain management in Kent and Medway. Open to relocate within the UK.</p>
-    </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="profile-container">
+      <img src="8fa46682-47eb-447d-bc7a-352f2ca07d24.png" alt="Satya Manikumar Chode" class="profile-photo">
+    </div>
+    <p>Dedicated and results-driven professional with a Master's degree in Engineering Management (First Class Honours) and hands-on experience in warehouse operations, logistics, ERP systems (SAP), and supply chain optimization.</p>
+    <p>Currently seeking full-time opportunities in logistics, operations, or supply chain management in Kent and Medway. Open to relocate within the UK.</p>
+  </section>
 
-    <section id="certifications">
-        <h2>Certifications</h2>
-        <div class="cert-list">
-            <div class="cert-card">
-                <h3>LinkedIn Supply Chain Management Certificate</h3>
-                <p>Dec 2024</p>
-            </div>
-            <div class="cert-card">
-                <h3>SAP ERP Essential Training</h3>
-                <p>Feb 2025</p>
-            </div>
-            <div class="cert-card">
-                <h3>Inventory Management Foundations</h3>
-                <p>Dec 2024</p>
-            </div>
-            <div class="cert-card">
-                <h3>Excel: Supply Chain Analysis</h3>
-                <p>Mar 2025</p>
-            </div>
-        </div>
-    </section>
+  <section id="achievements">
+    <h2>Key Achievements</h2>
+    <div class="achievement-list">
+      <div class="achievement" onclick="openPopup('warehouse')">
+        🏭 Warehouse Operations Excellence
+      </div>
+      <div class="achievement" onclick="openPopup('sap')">
+        💻 SAP ERP System Expertise
+      </div>
+      <div class="achievement" onclick="openPopup('supply')">
+        📦 Supply Chain Optimization
+      </div>
+      <div class="achievement" onclick="openPopup('master')">
+        🎓 Master's in Engineering Management
+      </div>
+    </div>
+  </section>
 
-    <section id="resume">
-        <h2>Resume</h2>
-        <p><a href="#" class="download-btn">Download My CV (PDF)</a></p>
-    </section>
+  <!-- Achievement Popups -->
+  <div id="warehouse" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('warehouse')">&times;</span>
+      <h3>Warehouse Operations Excellence</h3>
+      <p>Extensive hands-on experience in warehouse operations at Tesco and Evri, including:</p>
+      <ul>
+        <li>Order picking and stock management</li>
+        <li>Team collaboration and process optimization</li>
+        <li>Inventory control and logistics coordination</li>
+        <li>Proven ability to work efficiently in fast-paced environments</li>
+      </ul>
+    </div>
+  </div>
 
-    <section id="blog">
-        <h2>Blog</h2>
-        <article>
-            <h3>My Journey into Logistics & Tech</h3>
-            <p>Sharing insights from my career transition from warehouse operations to exploring data-driven supply chain solutions...</p>
-            <p><em>Coming soon</em></p>
-        </article>
-    </section>
+  <div id="sap" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('sap')">&times;</span>
+      <h3>SAP ERP System Expertise</h3>
+      <p>Proficient in enterprise resource planning systems:</p>
+      <ul>
+        <li>SAP ERP essential training completed (Feb 2025)</li>
+        <li>Understanding of modules relevant to logistics and operations</li>
+        <li>Data analysis and reporting capabilities</li>
+        <li>Integration of business processes through ERP systems</li>
+      </ul>
+    </div>
+  </div>
 
-    <footer>
-        <p>☏️ <a href="mailto:manikumarc32@gmail.com">manikumarc32@gmail.com</a> | 📍 Maidstone, UK</p>
-        <p><a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a> | <a href="https://github.com/manikumarc32" target="_blank">GitHub</a></p>
-    </footer>
+  <div id="supply" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('supply')">&times;</span>
+      <h3>Supply Chain Optimization</h3>
+      <p>Demonstrated expertise in supply chain and logistics:</p>
+      <ul>
+        <li>LinkedIn Supply Chain Management Certificate (Dec 2024)</li>
+        <li>Inventory Management Foundations (Dec 2024)</li>
+        <li>Excel: Supply Chain Analysis certification (Mar 2025)</li>
+        <li>Practical experience in optimizing logistics workflows</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="master" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('master')">&times;</span>
+      <h3>Master's in Engineering Management</h3>
+      <p>Advanced qualifications and specialized knowledge:</p>
+      <ul>
+        <li>Master's degree in Engineering Management (First Class Honours)</li>
+        <li>Strong analytical and problem-solving skills</li>
+        <li>Project management and strategic planning capabilities</li>
+        <li>Foundation for operations and supply chain leadership</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="cert-list">
+      <div class="cert-card">
+        <h3>LinkedIn Supply Chain Management Certificate</h3>
+        <p>Dec 2024</p>
+      </div>
+      <div class="cert-card">
+        <h3>SAP ERP Essential Training</h3>
+        <p>Feb 2025</p>
+      </div>
+      <div class="cert-card">
+        <h3>Inventory Management Foundations</h3>
+        <p>Dec 2024</p>
+      </div>
+      <div class="cert-card">
+        <h3>Excel: Supply Chain Analysis</h3>
+        <p>Mar 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <p><a href="#" class="download-btn">Download My CV (PDF)</a></p>
+  </section>
+
+  <section id="blog">
+    <h2>Blog</h2>
+    <article>
+      <h3>My Journey into Logistics & Tech</h3>
+      <p>Sharing insights from my career transition from warehouse operations to exploring data-driven supply chain solutions...</p>
+      <p><em>Coming soon</em></p>
+    </article>
+  </section>
+
+  <footer>
+    <p>☏️ <a href="mailto:manikumarc32@gmail.com">manikumarc32@gmail.com</a> | 📍 Maidstone, UK</p>
+    <p><a href="https://www.linkedin.com/in/satya-manikumar-chode" target="_blank">LinkedIn</a> | <a href="https://github.com/manikumarc32" target="_blank">GitHub</a></p>
+  </footer>
+
+  <script>
+    function openPopup(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+
+    function closePopup(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    // Close popup when clicking outside the content
+    window.addEventListener('click', function(event) {
+      if (event.target.classList.contains('popup')) {
+        event.target.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
