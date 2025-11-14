@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Satya Manikumar Chode | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
   <header>
     <h1>Satya Manikumar Chode</h1>
     <p>Warehouse & Logistics Professional | Aspiring Operations Leader</p>
   </header>
 
-  <!-- ABOUT SECTION -->
+  <!-- About -->
   <section id="about">
     <h2>About Me</h2>
     <div class="profile-container">
@@ -22,85 +33,77 @@
     <p>Currently seeking full-time opportunities in logistics, operations, or supply chain management in Kent and Medway. Open to relocate within the UK.</p>
   </section>
 
-  <!-- KEY ACHIEVEMENTS SECTION (Logistics) -->
-  <section id="achievements">
-    <h2>Key Achievements</h2>
-    <div class="achievement-list">
-      <div class="achievement" onclick="openPopup('warehouse')">
-        🏭 Warehouse Operations Excellence
+  <!-- Certifications Gallery -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="cert-gallery">
+      <div class="cert-card" onclick="openCertPopup('aws')">
+        <img src="images/aws-cert.jpg" alt="AWS Certificate" class="cert-img">
+        <p>AWS Internship Certificate</p>
       </div>
-      <div class="achievement" onclick="openPopup('sap')">
-        💻 SAP ERP System Expertise
+      <div class="cert-card" onclick="openCertPopup('sap')">
+        <img src="images/sap-cert.jpg" alt="SAP ERP" class="cert-img">
+        <p>SAP ERP Essential Training</p>
       </div>
-      <div class="achievement" onclick="openPopup('supply')">
-        📦 Supply Chain Optimization
+      <div class="cert-card" onclick="openCertPopup('inventory')">
+        <img src="images/inventory-cert.jpg" alt="Inventory Management" class="cert-img">
+        <p>Inventory Management Foundations</p>
       </div>
-      <div class="achievement" onclick="openPopup('master')">
-        🎓 Master's in Engineering Management
+      <div class="cert-card" onclick="openCertPopup('operations')">
+        <img src="images/operations-cert.jpg" alt="Operations Management" class="cert-img">
+        <p>Operations Management Foundations</p>
+      </div>
+      <div class="cert-card" onclick="openCertPopup('supplychain')">
+        <img src="images/supplychain-cert.jpg" alt="Supply Chain" class="cert-img">
+        <p>Supply Chain Foundations</p>
       </div>
     </div>
   </section>
 
-  <!-- ACHIEVEMENT POPUPS (Logistics) -->
-  <div id="warehouse" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup('warehouse')">&times;</span>
-      <h3>Warehouse Operations Excellence</h3>
-      <p>Extensive hands-on experience in warehouse operations at Tesco and Evri, including:</p>
-      <ul>
-        <li>Order picking and stock management</li>
-        <li>Team collaboration and process optimization</li>
-        <li>Inventory control and logistics coordination</li>
-        <li>Proven ability to work efficiently in fast-paced environments</li>
-      </ul>
+  <!-- Certification Popups (View Only) -->
+  <div id="aws-popup" class="cert-popup">
+    <div class="cert-popup-content">
+      <span class="close-btn" onclick="closeCertPopup('aws')">&times;</span>
+      <h3>AWS Internship Certificate</h3>
+      <img src="images/aws-cert.jpg" alt="AWS Certificate">
     </div>
   </div>
 
-  <div id="sap" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup('sap')">&times;</span>
-      <h3>SAP ERP System Expertise</h3>
-      <p>Proficient in enterprise resource planning systems:</p>
-      <ul>
-        <li>SAP ERP essential training completed (Feb 2025)</li>
-        <li>Understanding of modules relevant to logistics and operations</li>
-        <li>Data analysis and reporting capabilities</li>
-        <li>Integration of business processes through ERP systems</li>
-      </ul>
+  <div id="sap-popup" class="cert-popup">
+    <div class="cert-popup-content">
+      <span class="close-btn" onclick="closeCertPopup('sap')">&times;</span>
+      <h3>SAP ERP Essential Training</h3>
+      <img src="images/sap-cert.jpg" alt="SAP ERP">
     </div>
   </div>
 
-  <div id="supply" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup('supply')">&times;</span>
-      <h3>Supply Chain Optimization</h3>
-      <p>Demonstrated expertise in supply chain and logistics:</p>
-      <ul>
-        <li>LinkedIn Supply Chain Management Certificate (Dec 2024)</li>
-        <li>Inventory Management Foundations (Dec 2024)</li>
-        <li>Excel: Supply Chain Analysis certification (Mar 2025)</li>
-        <li>Practical experience in optimizing logistics workflows</li>
-      </ul>
+  <div id="inventory-popup" class="cert-popup">
+    <div class="cert-popup-content">
+      <span class="close-btn" onclick="closeCertPopup('inventory')">&times;</span>
+      <h3>Inventory Management Foundations</h3>
+      <img src="images/inventory-cert.jpg" alt="Inventory Management">
     </div>
   </div>
 
-  <div id="master" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup('master')">&times;</span>
-      <h3>Master's in Engineering Management</h3>
-      <p>Advanced qualifications and specialized knowledge:</p>
-      <ul>
-        <li>Master's degree in Engineering Management (First Class Honours)</li>
-        <li>Strong analytical and problem-solving skills</li>
-        <li>Project management and strategic planning capabilities</li>
-        <li>Foundation for operations and supply chain leadership</li>
-      </ul>
+  <div id="operations-popup" class="cert-popup">
+    <div class="cert-popup-content">
+      <span class="close-btn" onclick="closeCertPopup('operations')">&times;</span>
+      <h3>Operations Management Foundations</h3>
+      <img src="images/operations-cert.jpg" alt="Operations Management">
     </div>
   </div>
 
-  <!-- ROBOTICS & COMPETITIONS SECTION (WITH IMAGES) -->
-  <section id="robotics-achievements">
-    <h2>Robotics & Competitions</h2>
+  <div id="supplychain-popup" class="cert-popup">
+    <div class="cert-popup-content">
+      <span class="close-btn" onclick="closeCertPopup('supplychain')">&times;</span>
+      <h3>Supply Chain Foundations</h3>
+      <img src="images/supplychain-cert.jpg" alt="Supply Chain">
+    </div>
+  </div>
+
+  <!-- Achievements -->
+  <section id="achievements">
+    <h2>Achievements</h2>
     <div class="achievement-list">
       <div class="achievement" onclick="openPopup('robotics')">
         🤠 Robotics Workshop (2019)
@@ -117,7 +120,7 @@
     </div>
   </section>
 
-  <!-- ROBOTICS POPUPS (WITH IMAGES FROM /images FOLDER) -->
+  <!-- Achievement Popups -->
   <div id="robotics" class="popup">
     <div class="popup-content">
       <span class="close" onclick="closePopup('robotics')">&times;</span>
@@ -141,7 +144,7 @@
       <span class="close" onclick="closePopup('drone')">&times;</span>
       <h3>🚁 Drone Building Competition</h3>
       <img src="images/drone.jpg" alt="Drone Competition" class="popup-img">
-      <p>Participated in a drone building competition, involving assembly, calibration, and flight testing of a multi-rotor drone.</p>
+      <p>Participated in a drone building competition, involving assembly, calibration, and flight testing.</p>
     </div>
   </div>
 
@@ -150,87 +153,22 @@
       <span class="close" onclick="closePopup('pushpak')">&times;</span>
       <h3>🏆 Pushpak 2K19 – First Prize</h3>
       <img src="images/pushpak.jpg" alt="Pushpak Competition" class="popup-img">
-      <p>Secured the first prize in the Pushpak 2K19 competition held at college. This was a prestigious engineering competition showcasing innovation and technical excellence.</p>
+      <p>Secured the first prize in the Pushpak 2K19 competition held at college. A prestigious engineering competition showcasing innovation and technical excellence.</p>
     </div>
   </div>
 
-  <!-- CERTIFICATIONS SECTION -->
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <div class="cert-list">
-      <div class="cert-card">
-        <h3>LinkedIn Supply Chain Management Certificate</h3>
-        <p>Dec 2024</p>
-      </div>
-      <div class="cert-card">
-        <h3>SAP ERP Essential Training</h3>
-        <p>Feb 2025</p>
-      </div>
-      <div class="cert-card">
-        <h3>Inventory Management Foundations</h3>
-        <p>Dec 2024</p>
-      </div>
-      <div class="cert-card">
-        <h3>Excel: Supply Chain Analysis</h3>
-        <p>Mar 2025</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- RESUME SECTION -->
-  <section id="resume">
-    <h2>Resume</h2>
-    <p><a href="#" class="download-btn">Download My CV (PDF)</a></p>
-  </section>
-
-  <!-- BLOG SECTION -->
-  <section id="blog">
-    <h2>Blog</h2>
-    <article>
-      <h3>My Journey into Logistics & Tech</h3>
-      <p>Sharing insights from my career transition from warehouse operations to exploring data-driven supply chain solutions and emerging technologies...</p>
-      <p><em>Coming soon</em></p>
-    </article>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>☏️ <a href="mailto:manikumarc32@gmail.com">manikumarc32@gmail.com</a> | 📍 Maidstone, UK</p>
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📬 <a href="mailto:manikumarc32@gmail.com">manikumarc32@gmail.com</a></p>
+    <p>📍 Maidstone, UK</p>
     <p><a href="https://www.linkedin.com/in/satya-manikumar-chode" target="_blank">LinkedIn</a> | <a href="https://github.com/manikumarc32" target="_blank">GitHub</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Satya Manikumar Chode. All rights reserved.</p>
   </footer>
 
-  <!-- JAVASCRIPT FOR POPUPS -->
-  <script>
-    function openPopup(id) {
-      const popup = document.getElementById(id);
-      if (popup) {
-        popup.style.display = "flex";
-      }
-    }
-
-    function closePopup(id) {
-      const popup = document.getElementById(id);
-      if (popup) {
-        popup.style.display = "none";
-      }
-    }
-
-    // Close popup when clicking outside the content
-    window.addEventListener('click', function(event) {
-      if (event.target.classList.contains('popup')) {
-        event.target.style.display = "none";
-      }
-    });
-
-    // Close popup with Escape key
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        const popups = document.querySelectorAll('.popup');
-        popups.forEach(popup => {
-          popup.style.display = "none";
-        });
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
