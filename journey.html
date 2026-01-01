@@ -28,7 +28,7 @@
     }
 
     header p {
-      max-width: 700px;
+      max-width: 800px;
       color: #555;
       font-size: 1.1rem;
     }
@@ -56,6 +56,28 @@
       color: #444;
     }
 
+    .certifications {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .cert-card {
+      border: 1px solid #e5e5e5;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .cert-card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 0.8rem;
+      border: 1px solid #ddd;
+    }
+
     .back-link {
       display: inline-block;
       margin-top: 3rem;
@@ -72,86 +94,126 @@
   <header>
     <h1>My Journey</h1>
     <p>
-      This page explains my academic and professional journey so far — from my engineering
-      education in India to completing my master’s degree in the UK, and my current focus
-      on building a strong foundation for an entry-level career.
+      This page shares my journey so far — from completing my education,
+      moving to the UK, building responsibility through work and study,
+      and gradually developing clarity about my career direction.
+      I am at an entry level, learning step by step, and this page reflects that progress honestly.
     </p>
   </header>
 
   <!-- CHAPTER 1 -->
   <section>
     <div class="date">2018 – 2022 · India</div>
-    <h2>Bachelor’s in Aeronautical Engineering</h2>
+    <h2>Engineering Foundation</h2>
 
     <p>
-      I began my higher education in India, where I pursued a Bachelor’s degree in
-      Aeronautical Engineering at Sathyabama University. These four years helped me build
-      a strong technical mindset and discipline required for engineering work.
+      I completed my Bachelor’s degree in Aeronautical Engineering at
+      Sathyabama University in India. These four years helped me develop
+      discipline, technical thinking, and the ability to work consistently
+      toward long-term goals.
     </p>
 
     <p>
-      During my final year, I worked on an academic project involving the development of
-      a 2U Nano Satellite for atmospheric sensing. The project was completed as part of a
-      team and focused on understanding system integration, hardware components, and
-      collaborative problem-solving.
+      As part of my final-year academic work, I participated in a team-based
+      project involving the development of a 2U Nano Satellite for atmospheric
+      sensing. The project helped me understand system-level thinking,
+      collaboration, and responsibility within a group environment.
     </p>
 
     <p>
-      This phase of my life shaped my work ethic, teamwork skills, and ability to handle
-      long-term academic responsibilities.
+      During this phase, I also took part in workshops and technical activities,
+      which contributed to my interest in understanding how real systems are
+      designed, built, and managed.
     </p>
   </section>
 
   <!-- CHAPTER 2 -->
   <section>
     <div class="date">2023 – 2025 · United Kingdom</div>
-    <h2>Master’s in Engineering Management</h2>
+    <h2>Master’s in Engineering Management & Personal Growth</h2>
 
     <p>
-      After completing my undergraduate degree, I moved to the United Kingdom to pursue
-      a Master’s degree in Engineering Management at the University of Greenwich.
+      In 2023, I moved to the United Kingdom to pursue a Master’s degree in
+      Engineering Management at the University of Greenwich. This transition
+      was a major step in my life, both academically and personally.
     </p>
 
     <p>
-      The program introduced me to management principles, operations thinking, and
-      process-focused problem-solving, complementing my engineering background.
+      The program helped me develop an understanding of operations, planning,
+      coordination, and process-focused thinking. It complemented my engineering
+      background by introducing management perspectives relevant to real-world
+      environments.
     </p>
 
     <p>
-      For my dissertation, I researched <strong>ethical considerations in the use of AI
-      in healthcare research</strong>. This work helped me develop critical thinking,
-      structured research skills, and an appreciation for responsibility when applying
-      technology in real-world contexts.
+      For my dissertation, I worked on a research topic titled
+      <strong>“Ethical Considerations on the Use of AI in Healthcare Research.”</strong>
+      This experience strengthened my research skills and helped me understand
+      the importance of responsibility, ethics, and accountability when applying
+      technology in sensitive domains.
     </p>
 
     <p>
-      I completed my master’s degree on time while adapting to a new academic system
-      and living environment.
+      Alongside my studies, I adapted to a new education system, cultural
+      environment, and independent living. I completed my master’s degree
+      on time, which was an important personal achievement for me.
     </p>
   </section>
 
   <!-- CHAPTER 3 -->
   <section>
     <div class="date">2025 – Present</div>
-    <h2>Transition & Skill Building</h2>
+    <h2>Professional Growth, Networking & Skill Building</h2>
 
     <p>
-      After completing my studies, I began focusing on understanding practical
-      operations and logistics environments. I gained hands-on exposure through
-      warehouse and logistics roles in the UK, which helped me understand how systems
-      work on the ground.
+      After completing my master’s degree, I focused on gaining practical
+      exposure and understanding how operations function in real working
+      environments. I worked in warehouse and logistics roles, which gave me
+      first-hand experience with order flow, accuracy, teamwork, and
+      responsibility.
     </p>
 
     <p>
-      Alongside work experience, I started building foundational knowledge in
-      supply chain management, inventory control, SAP ERP systems, and basic data
-      analysis concepts.
+      During this period, I also started attending networking events in the UK.
+      These events helped me improve my communication, understand industry
+      expectations, and gain confidence in interacting with professionals from
+      different backgrounds.
     </p>
 
     <p>
-      I am currently continuing to learn and improve, with the goal of securing an
-      entry-level role where I can grow responsibly, contribute consistently, and
-      develop long-term professional skills.
+      To strengthen my foundational knowledge, I completed several professional
+      certifications focused on supply chain, inventory management, and ERP
+      systems. These courses helped me understand concepts beyond daily tasks
+      and gave me a structured way to learn.
+    </p>
+
+    <!-- CERTIFICATIONS -->
+    <div class="certifications">
+      <div class="cert-card">
+        <img src="images/supply-chain-cert.png" alt="Supply Chain Certification">
+        Supply Chain Foundations
+      </div>
+
+      <div class="cert-card">
+        <img src="images/inventory-cert.png" alt="Inventory Management Certification">
+        Inventory Management Foundations
+      </div>
+
+      <div class="cert-card">
+        <img src="images/sap-erp-cert.png" alt="SAP ERP Certification">
+        SAP ERP Essentials
+      </div>
+
+      <div class="cert-card">
+        <img src="images/excel-cert.png" alt="Excel Certification">
+        Excel for Supply Chain Analysis
+      </div>
+    </div>
+
+    <p>
+      I am currently continuing to learn and improve, with the goal of building
+      a strong foundation for an entry-level role where I can take responsibility,
+      support teams effectively, and grow professionally over time.
     </p>
   </section>
 
