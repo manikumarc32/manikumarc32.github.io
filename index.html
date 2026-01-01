@@ -500,7 +500,18 @@
     }
 
     /* --- RESPONSIVE --- */
-    @media (max-width: 768px) {
+/* --- LIGHT FADE-IN EFFECT --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (maxwidth: 768px) {
       .hero h1 { font-size: 3rem; }
       .about-grid { grid-template-columns: 1fr; }
       .timeline-item { grid-template-columns: 1fr; border-left: none; padding-left: 0; }
@@ -542,7 +553,7 @@
   </header>
 
   <!-- About Section -->
-  <section id="about">
+  <section id="about" class="fade-in">
     <div class="section-header">
       <h2>About Me</h2>
       <p class="section-desc">Merging engineering precision with supply chain efficiency.</p>
@@ -572,7 +583,7 @@ and supply chain environments.</p>
   </section>
 
   <!-- Experience Section (NEW) -->
-  <section id="experience">
+  <section id="experience" class="fade-in">
     <div class="section-header">
       <h2>Experience</h2>
       <p class="section-desc">My professional journey so far.</p>
@@ -607,7 +618,7 @@ and supply chain environments.</p>
   -->
   
   <!-- Certifications Grid -->
-  <section id="certifications">
+  <section id="certifications" class="fade-in">
     <div class="section-header">
       <h2>Certifications</h2>
       <p class="section-desc">Professional credentials & training.</p>
@@ -662,7 +673,7 @@ and supply chain environments.</p>
   </section>
 
   <!-- Skills Section (NEW) -->
-  <section id="skills">
+  <section id="skills" class="fade-in">
     <div class="section-header">
       <h2>Skills</h2>
       <p class="section-desc">Technologies & Core Competencies.</p>
@@ -683,7 +694,7 @@ and supply chain environments.</p>
   </section>
 
   <!-- Achievements Grid -->
-  <section id="achievements">
+  <section id="achievements" class="fade-in">
     <div class="section-header">
       <h2>Achievements</h2>
       <p class="section-desc">Awards & Competitions.</p>
