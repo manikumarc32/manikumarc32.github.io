@@ -3,26 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Satya Manikumar Chode | Operations & Logistics</title>
-  
-  <!-- Google Fonts: Inter for that clean, modern look -->
+  <title>Satya Manikumar Chode | Portfolio</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* --- CSS VARIABLES & RESET --- */
     :root {
-      --bg-color: #ffffff;
-      --text-main: #111111;
-      --text-secondary: #555555;
-      --accent: #000000;
-      --card-bg: #f4f4f4;
-      --hover-bg: #111111;
-      --hover-text: #ffffff;
-      --border-color: #e0e0e0;
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --bg: #ffffff;
+      --text: #111;
+      --muted: #555;
+      --border: #e5e5e5;
     }
 
     * {
@@ -31,860 +22,230 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     a {
       text-decoration: none;
       color: inherit;
-      transition: var(--transition);
     }
 
-    ul { list-style: none; }
-
-    /* --- NAVIGATION --- */
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      padding: 1.5rem 5%;
+      padding: 1.2rem 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.95);
+      border-bottom: 1px solid var(--border);
       z-index: 1000;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s;
     }
 
-    nav.scrolled {
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .logo {
+    nav .logo {
       font-weight: 800;
-      font-size: 1.2rem;
-      letter-spacing: -0.5px;
+      font-size: 1.1rem;
     }
 
     nav ul {
+      list-style: none;
       display: flex;
       gap: 2rem;
     }
 
     nav a {
       font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      position: relative;
+      color: var(--muted);
     }
 
     nav a:hover {
-      color: var(--text-main);
+      color: var(--text);
     }
 
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0%;
-      height: 1px;
-      background: var(--text-main);
-      transition: var(--transition);
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    /* --- HERO SECTION --- */
-    .hero {
+    /* HERO */
+    header {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 5%;
-      padding-top: 80px;
+      padding: 140px 6% 0;
     }
 
-    .hero h1 {
-      font-size: clamp(3rem, 8vw, 6rem);
+    header h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
       font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -2px;
-      margin-bottom: 1.5rem;
-      max-width: 1200px;
+      margin-bottom: 1rem;
     }
 
-    .hero p {
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
-      color: var(--text-secondary);
+    header p {
       max-width: 600px;
-      margin-bottom: 3rem;
-      font-weight: 300;
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
     }
 
-    .hero-btn-group {
+    .btns {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
     }
 
-    .hero-btn {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      border: 1px solid var(--text-main);
-      border-radius: 50px;
+    .btn {
+      padding: 0.9rem 2rem;
+      border: 1px solid var(--text);
+      border-radius: 30px;
       font-weight: 600;
-      transition: var(--transition);
     }
 
-    .hero-btn.primary {
-      background: var(--text-main);
-      color: white;
+    .btn.primary {
+      background: var(--text);
+      color: #fff;
     }
 
-    .hero-btn.primary:hover {
+    .btn.primary:hover {
       background: transparent;
-      color: var(--text-main);
+      color: var(--text);
     }
 
-    .hero-btn.secondary {
-      background: transparent;
-      color: var(--text-main);
-    }
-
-    .hero-btn.secondary:hover {
-      background: var(--card-bg);
-    }
-
-    /* --- SECTIONS GENERAL --- */
+    /* SECTIONS */
     section {
-      padding: 6rem 5%;
-      scroll-margin-top: 80px; 
-    }
-
-    .section-header {
-      margin-bottom: 4rem;
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 2rem;
-      flex-wrap: wrap;
-      gap: 1rem;
+      padding: 6rem 6%;
+      max-width: 1100px;
     }
 
     h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: -1px;
-    }
-
-    .section-desc {
-      color: var(--text-secondary);
-      max-width: 400px;
-      text-align: right;
-    }
-
-    /* --- ABOUT SECTION --- */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .profile-img-container {
-      position: relative;
-      overflow: hidden;
-      border-radius: 2px;
-    }
-
-    .profile-photo {
-      width: 100%;
-      display: block;
-      filter: grayscale(100%);
-      transition: var(--transition);
-    }
-
-    .profile-img-container:hover .profile-photo {
-      filter: grayscale(0%);
-    }
-
-    .profile-placeholder {
-      width: 100%;
-      aspect-ratio: 1/1;
-      background-color: #f0f0f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      color: #ccc;
-    }
-
-    .about-text p {
+      font-size: 2.3rem;
       margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-      color: var(--text-secondary);
     }
 
-    .about-text strong {
-      color: var(--text-main);
-      font-weight: 600;
+    p {
+      color: var(--muted);
+      max-width: 700px;
     }
 
-    /* --- EXPERIENCE TIMELINE --- */
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      gap: 2rem;
-      padding-bottom: 3rem;
-      border-left: 1px solid var(--border-color);
-      padding-left: 2rem;
-      position: relative;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -5px;
-      top: 0;
-      width: 9px;
-      height: 9px;
-      background: var(--text-main);
-      border-radius: 50%;
-    }
-
-    .timeline-date {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .timeline-content h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .timeline-content h4 {
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
-    }
-
-    .timeline-content ul {
-      list-style: disc;
-      padding-left: 1.2rem;
-      color: var(--text-secondary);
-    }
-
-    .timeline-content li {
-      margin-bottom: 0.5rem;
-    }
-
-    /* --- SKILLS SECTION --- */
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .skill-tag {
-      padding: 0.8rem 1.5rem;
-      background: var(--card-bg);
-      border-radius: 4px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: var(--transition);
-    }
-
-    .skill-tag:hover {
-      background: var(--text-main);
-      color: white;
-    }
-
-    /* --- GRID LAYOUTS (Certs/Achievements) --- */
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      border-top: 1px solid var(--border-color);
-      border-left: 1px solid var(--border-color);
-    }
-
-    .grid-item {
-      background: var(--bg-color);
-      padding: 3rem 2rem;
-      cursor: pointer;
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 280px;
-      position: relative;
-      border-right: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .grid-item:hover {
-      background: var(--hover-bg);
-      color: var(--hover-text);
-      border-color: var(--hover-bg);
-    }
-
-    .grid-item:hover * {
-      color: var(--hover-text);
-    }
-
-    .item-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .item-icon {
-      font-size: 2.5rem;
-      color: var(--text-main);
-      transition: var(--transition);
-    }
-
-    .item-arrow {
+    /* FADE-IN */
+    .fade {
       opacity: 0;
-      transform: translateX(-10px);
-      transition: var(--transition);
-      font-size: 1.2rem;
-      color: var(--text-main);
+      transform: translateY(20px);
+      transition: all 0.6s ease;
     }
 
-    .grid-item:hover .item-arrow {
+    .fade.show {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
 
-    .item-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      line-height: 1.2;
-      margin-top: auto;
-      padding-top: 2rem;
-      color: var(--text-main);
-      transition: var(--transition);
-    }
-
-    /* --- MODALS --- */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(5px);
-      z-index: 3000;
-      justify-content: center;
-      align-items: center;
-      animation: fadeIn 0.3s ease-out;
-    }
-
-    .modal-content {
-      background: white;
-      width: 90%;
-      max-width: 500px;
-      padding: 3rem;
-      border: 1px solid var(--text-main);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-      position: relative;
-      text-align: left;
-      animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: none;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: var(--text-main);
-      transition: var(--transition);
-      line-height: 1;
-    }
-
-    .modal-close:hover {
-      transform: rotate(90deg);
-    }
-
-    .modal-icon {
-      font-size: 3.5rem;
-      margin-bottom: 1.5rem;
-      display: block;
-      color: var(--text-main);
-    }
-
-    .modal-title {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      font-weight: 800;
-    }
-
-    .modal-text {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-    }
-
-    /* --- CONTACT & FOOTER --- */
-    .contact-section {
+    /* CONTACT */
+    .contact {
       background: #111;
-      color: white;
-      padding: 8rem 5%;
+      color: #fff;
       text-align: center;
     }
 
-    .contact-title {
-      font-size: 4rem;
-      font-weight: 800;
-      margin-bottom: 2rem;
+    .contact p {
+      color: #aaa;
     }
 
-    .contact-links {
+    .links {
+      margin-top: 2rem;
       display: flex;
       justify-content: center;
-      gap: 3rem;
-      margin-top: 3rem;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
 
-    .contact-links a {
-      color: #888;
-      font-size: 1.2rem;
-      transition: color 0.3s;
+    .links a {
+      color: #aaa;
     }
 
-    .contact-links a:hover {
-      color: white;
+    .links a:hover {
+      color: #fff;
     }
 
     footer {
       background: #111;
-      color: #555;
-      padding: 2rem 5%;
+      color: #666;
       text-align: center;
-      font-size: 0.8rem;
-      border-top: 1px solid #222;
+      padding: 1.5rem;
+      font-size: 0.85rem;
     }
 
-    /* --- ANIMATIONS --- */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    /* --- RESPONSIVE --- */
-/* --- LIGHT FADE-IN EFFECT --- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (maxwidth: 768px) {
-      .hero h1 { font-size: 3rem; }
-      .about-grid { grid-template-columns: 1fr; }
-      .timeline-item { grid-template-columns: 1fr; border-left: none; padding-left: 0; }
-      .timeline-item::before { display: none; }
-      .section-header { flex-direction: column; gap: 1rem; }
-      .section-desc { text-align: left; }
-      .modal-content { padding: 2rem; }
-      .contact-title { font-size: 2.5rem; }
-      .contact-links { flex-direction: column; gap: 1.5rem; }
-      
-      /* Fix Nav on mobile */
-      nav { padding: 1rem 5%; flex-direction: column; gap: 1rem; }
-      nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center;}
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Navigation -->
   <nav>
     <div class="logo">Satya.</div>
     <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="journey.html">Journey</a></li>
-  <li><a href="blog.html">Blog</a></li>
-</ul>
-
+      <li><a href="index.html">Home</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="hero">
+  <header class="fade">
     <h1>Satya Manikumar Chode</h1>
-    <p>Engineering Management Graduate.<br>Entry-level operations & logistics learner based in Kent..</p>
-    <div class="hero-btn-group">
-      <a href="#contact" class="hero-btn primary">Get in Touch</a>
-      <!-- Placeholder link for resume -->
-      <a href="#" class="hero-btn secondary" onclick="alert('You would link your PDF resume here!'); return false;">Download CV</a>
+    <p>
+      Engineering Management graduate with hands-on exposure to logistics and
+      warehouse operations. Entry-level professional focused on learning,
+      responsibility, and growth.
+    </p>
+    <div class="btns">
+      <a href="#contact" class="btn primary">Get in touch</a>
+      <a href="#" class="btn">Download CV</a>
     </div>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="fade-in">
-    <div class="section-header">
-      <h2>About Me</h2>
-      <p class="section-desc">Merging engineering precision with supply chain efficiency.</p>
-    </div>
-    
-    <div class="about-grid">
-      <div class="profile-img-container">
-        <img 
-          src="8fa46682-47eb-447d-bc7a-352f2ca07d24.png" 
-          alt="Satya Manikumar Chode" 
-          class="profile-photo"
-          onerror="this.style.display='none'; document.getElementById('profile-fallback').style.display='flex';"
-        >
-        <div id="profile-fallback" class="profile-placeholder">
-          <i class="fas fa-user"></i>
-        </div>
-      </div>
-      
-      <div class="about-text">
-        <p>I am an Engineering Management graduate with a strong academic foundation and hands-on exposure to warehouse and logistics operations in the UK. </str. My background is built on hands-on experience in warehouse operations, logistics, and supply chain optimization.</p>
-        <p>Through academic learning and professional training, I have developed a basic
-understanding of SAP ERP systems and operational processes used in logistics
-and supply chain environments.</p>
-        <p>Currently seeking full-time opportunities in logistics, operations, or supply chain management in Kent and Medway. Open to relocation within the UK.</p>
-      </div>
-    </div>
+  <section class="fade">
+    <h2>About Me</h2>
+    <p>
+      I completed my Master’s in Engineering Management in the UK and am currently
+      building practical experience in logistics and operations. My focus is on
+      understanding real systems, working responsibly in teams, and continuously
+      improving my skills.
+    </p>
   </section>
 
-  <!-- Experience Section (NEW) -->
-  <section id="experience" class="fade-in">
-    <div class="section-header">
-      <h2>Experience</h2>
-      <p class="section-desc">My professional journey so far.</p>
-    </div>
+  <section id="contact" class="contact fade">
+    <h2>Contact</h2>
+    <p>I am open to entry-level opportunities in operations and logistics.</p>
 
-    <!-- Example Timeline Items: You should edit these text contents -->
-    <div class="timeline-item">
-      <div class="timeline-date">2022 - Present</div>
-      <div class="timeline-content">
-        <h3>Warehouse Operations Associate</h3>
-        <h4>Example Logistics Co. | Maidstone, UK</h4>
-        <ul>
-          <li>Optimized inventory tracking using SAP systems, reducing discrepancies by 15%.</li>
-          <li>Coordinated shipping and receiving schedules to ensure on-time delivery.</li>
-          <li>Collaborated with cross-functional teams to improve warehouse safety protocols.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">2020 - 2021</div>
-      <div class="timeline-content">
-        <h3>Graduate Engineering Intern</h3>
-        <h4>Engineering Firm Ltd. | India</h4>
-        <ul>
-          <li>Assisted in project planning and resource allocation for manufacturing units.</li>
-          <li>Analyzed operational data to identify bottlenecks in the production line.</li>
-        </ul>
-      </div>
-    </div>
-  </section> 
-  -->
-  
-  <!-- Certifications Grid -->
-  <section id="certifications" class="fade-in">
-    <div class="section-header">
-      <h2>Certifications</h2>
-      <p class="section-desc">Professional credentials & training.</p>
-    </div>
-
-    <div class="grid-container">
-      <!-- AWS -->
-      <div class="grid-item" onclick="openModal('aws')">
-        <div class="item-top">
-          <i class="fab fa-aws item-icon"></i>
-          <span class="item-arrow">→</span>
-        </div>
-        <div class="item-title">AWS Internship<br>Certificate</div>
-      </div>
-
-      <!-- SAP -->
-      <div class="grid-item" onclick="openModal('sap')">
-        <div class="item-top">
-          <i class="fas fa-chart-bar item-icon"></i>
-          <span class="item-arrow">→</span>
-        </div>
-        <div class="item-title">SAP ERP<br>Essential Training</div>
-      </div>
-
-      <!-- Inventory -->
-      <div class="grid-item" onclick="openModal('inventory')">
-        <div class="item-top">
-          <i class="fas fa-boxes item-icon"></i>
-          <span class="item-arrow">→</span>
-        </div>
-        <div class="item-title">Inventory Management<br>Foundations</div>
-      </div>
-
-      <!-- Operations -->
-      <div class="grid-item" onclick="openModal('operations')">
-        <div class="item-top">
-          <i class="fas fa-cogs item-icon"></i>
-          <span class="item-arrow">→</span>
-        </div>
-        <div class="item-title">Operations Management<br>Foundations</div>
-      </div>
-
-      <!-- Supply Chain -->
-      <div class="grid-item" onclick="openModal('supplychain')">
-        <div class="item-top">
-          <i class="fas fa-truck-moving item-icon"></i>
-          <span class="item-arrow">→</span>
-        </div>
-        <div class="item-title">Supply Chain<br>Foundations</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section (NEW) -->
-  <section id="skills" class="fade-in">
-    <div class="section-header">
-      <h2>Skills</h2>
-      <p class="section-desc">Technologies & Core Competencies.</p>
-    </div>
-    
-    <div class="skills-grid">
-      <div class="skill-tag">SAP ERP</div>
-      <div class="skill-tag">Inventory Management</div>
-      <div class="skill-tag">Supply Chain Optimization</div>
-      <div class="skill-tag">Warehouse Operations</div>
-      <div class="skill-tag">Project Management</div>
-      <div class="skill-tag">Data Analysis</div>
-      <div class="skill-tag">Logistics Coordination</div>
-      <div class="skill-tag">MS Excel (Advanced)</div>
-      <div class="skill-tag">Team Leadership</div>
-      <div class="skill-tag">Process Improvement</div>
-    </div>
-  </section>
-
-  <!-- Achievements Grid -->
-  <section id="achievements" class="fade-in">
-    <div class="section-header">
-      <h2>Achievements</h2>
-      <p class="section-desc">Awards & Competitions.</p>
-    </div>
-
-    <div class="grid-container">
-      <div class="grid-item" onclick="openModal('robotics')">
-        <div class="item-top">
-          <i class="fas fa-robot item-icon"></i>
-          <span class="item-arrow">→</span>
-        </div>
-        <div class="item-title">Robotics<br>Workshop 2019</div>
-      </div>
-
-      <div class="grid-item" onclick="openModal('arduino')">
-        <div class="item-top">
-          <i class="fas fa-microchip item-icon"></i>
-          <span class="item-arrow">→</span>
-        </div>
-        <div class="item-title">Arduino Robotics<br>Competition</div>
-      </div>
-
-      <div class="grid-item" onclick="openModal('drone')">
-        <div class="item-top">
-          <i class="fas fa-helicopter item-icon"></i>
-          <span class="item-arrow">→</span>
-        </div>
-        <div class="item-title">Drone Building<br>Competition</div>
-      </div>
-
-      <div class="grid-item" onclick="openModal('pushpak')">
-        <div class="item-top">
-          <i class="fas fa-trophy item-icon"></i>
-          <span class="item-arrow">→</span>
-        </div>
-        <div class="item-title">Pushpak 2K19<br>First Prize</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <h2 class="contact-title">Let's Work Together.</h2>
-    <p style="color: #888; max-width: 500px; margin: 0 auto;">I am currently available for full-time roles in Operations and Logistics.</p>
-    
-    <div class="contact-links">
-      <a href="mailto:manikumarc32@gmail.com">manikumarc32@gmail.com</a>
+    <div class="links">
+      <a href="mailto:manikumarc32@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/satya-manikumar-chode" target="_blank">LinkedIn</a>
       <a href="https://github.com/manikumarc32" target="_blank">GitHub</a>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Satya Manikumar Chode. Maidstone, UK.</p>
+    © 2025 Satya Manikumar Chode · UK
   </footer>
 
-  <!-- MODALS (Hidden by default) -->
-  <div id="aws-modal" class="modal-overlay" onclick="closeModal('aws')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('aws')">×</button>
-      <i class="fab fa-aws modal-icon"></i>
-      <h3 class="modal-title">AWS Internship</h3>
-      <p class="modal-text">Successfully completed the AWS Internship program, gaining foundational cloud computing knowledge.</p>
-    </div>
-  </div>
-
-  <div id="sap-modal" class="modal-overlay" onclick="closeModal('sap')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('sap')">×</button>
-      <i class="fas fa-chart-bar modal-icon"></i>
-      <h3 class="modal-title">SAP ERP Training</h3>
-      <p class="modal-text">Completed essential training in SAP ERP systems, focusing on logistics and material management modules.</p>
-    </div>
-  </div>
-
-  <div id="inventory-modal" class="modal-overlay" onclick="closeModal('inventory')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('inventory')">×</button>
-      <i class="fas fa-boxes modal-icon"></i>
-      <h3 class="modal-title">Inventory Management</h3>
-      <p class="modal-text">LinkedIn Learning Certification covering inventory control techniques, safety stock, and turnover ratios.</p>
-    </div>
-  </div>
-
-  <div id="operations-modal" class="modal-overlay" onclick="closeModal('operations')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('operations')">×</button>
-      <i class="fas fa-cogs modal-icon"></i>
-      <h3 class="modal-title">Operations Management</h3>
-      <p class="modal-text">Certification in Operations Management Foundations, covering process analysis, bottlenecks, and efficiency improvements.</p>
-    </div>
-  </div>
-
-  <div id="supplychain-modal" class="modal-overlay" onclick="closeModal('supplychain')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('supplychain')">×</button>
-      <i class="fas fa-truck-moving modal-icon"></i>
-      <h3 class="modal-title">Supply Chain Foundations</h3>
-      <p class="modal-text">Comprehensive study of supply chain logistics, procurement, and distribution networks.</p>
-    </div>
-  </div>
-
-  <div id="robotics-modal" class="modal-overlay" onclick="closeModal('robotics')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('robotics')">×</button>
-      <i class="fas fa-robot modal-icon"></i>
-      <h3 class="modal-title">Robotics Workshop</h3>
-      <p class="modal-text">Created a four-legged robot powered by a connected power bank, programmed to move using C++ logic.</p>
-    </div>
-  </div>
-
-  <div id="arduino-modal" class="modal-overlay" onclick="closeModal('arduino')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('arduino')">×</button>
-      <i class="fas fa-microchip modal-icon"></i>
-      <h3 class="modal-title">Arduino Competition</h3>
-      <p class="modal-text">Competed in a robotics competition utilizing Arduino software and microcontroller programming.</p>
-    </div>
-  </div>
-
-  <div id="drone-modal" class="modal-overlay" onclick="closeModal('drone')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('drone')">×</button>
-      <i class="fas fa-helicopter modal-icon"></i>
-      <h3 class="modal-title">Drone Building</h3>
-      <p class="modal-text">Participated in a comprehensive drone building competition involving assembly, calibration, and flight testing.</p>
-    </div>
-  </div>
-
-  <div id="pushpak-modal" class="modal-overlay" onclick="closeModal('pushpak')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('pushpak')">×</button>
-      <i class="fas fa-trophy modal-icon"></i>
-      <h3 class="modal-title">Pushpak 2K19</h3>
-      <p class="modal-text">Secured First Prize in the Pushpak 2K19 competition, a prestigious engineering event showcasing innovation.</p>
-    </div>
-  </div>
-
   <script>
-    // Logic to open/close modals
-    function openModal(id) {
-      const modal = document.getElementById(id + '-modal');
-      if (modal) {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; 
-      }
+    const fades = document.querySelectorAll('.fade');
+
+    function reveal() {
+      fades.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 80) {
+          el.classList.add('show');
+        }
+      });
     }
 
-    function closeModal(id) {
-      const modal = document.getElementById(id + '-modal');
-      if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto'; 
-      }
-    }
-
-    document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") {
-        const modals = document.querySelectorAll('.modal-overlay');
-        modals.forEach(modal => {
-          modal.style.display = 'none';
-        });
-        document.body.style.overflow = 'auto';
-      }
-    });
-
-    // Scroll effect for Nav
-    window.addEventListener('scroll', function() {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
   </script>
-// Fade-in effect on scroll
-const fadeElements = document.querySelectorAll('.fade-in');
-
-function revealOnScroll() {
-  fadeElements.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      el.classList.add('visible');
-    }
-  });
-}
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
 
 </body>
 </html>
