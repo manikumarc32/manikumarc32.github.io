@@ -3,54 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Satya Manikumar Chode | Portfolio</title>
+  <title>Satya Mani Kumar Chode | Portfolio</title>
 
+  <!-- FONTS & ICONS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
       --bg: #ffffff;
-      --text: #111;
-      --muted: #555;
+      --text: #111111;
+      --muted: #555555;
       --border: #e5e5e5;
+      --accent: #007BFF;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.8;
+      scroll-behavior: smooth;
     }
 
     a {
       text-decoration: none;
       color: inherit;
+      transition: color 0.3s ease;
     }
 
-    /* NAV */
+    /* NAVBAR */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 1.2rem 6%;
+      padding: 1rem 6%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(255,255,255,0.95);
-      border-bottom: 1px solid var(--border);
       z-index: 1000;
     }
 
     nav .logo {
       font-weight: 800;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      color: var(--accent);
+      letter-spacing: 0.5px;
     }
 
     nav ul {
@@ -65,39 +72,46 @@
     }
 
     nav a:hover {
-      color: var(--text);
+      color: var(--accent);
     }
 
     /* HERO */
     header {
       min-height: 100vh;
-      padding: 140px 6% 0;
+      padding: 140px 6% 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
     }
 
     header h1 {
-      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
       font-weight: 800;
       margin-bottom: 1rem;
+      line-height: 1.2;
     }
 
     header p {
-      max-width: 600px;
-      font-size: 1.2rem;
+      max-width: 650px;
+      font-size: 1.1rem;
       color: var(--muted);
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
     .btns {
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .btn {
       padding: 0.9rem 2rem;
-      border: 1px solid var(--text);
       border-radius: 30px;
+      border: 1px solid var(--text);
       font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
     }
 
     .btn.primary {
@@ -110,43 +124,52 @@
       color: var(--text);
     }
 
-    /* SECTIONS */
+    .btn.secondary {
+      color: var(--text);
+    }
+
+    .btn.secondary:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* ABOUT SECTION */
     section {
       padding: 6rem 6%;
       max-width: 1100px;
+      margin: 0 auto;
     }
 
-    h2 {
+    section h2 {
       font-size: 2.3rem;
+      font-weight: 700;
       margin-bottom: 1.5rem;
+      color: var(--text);
     }
 
-    p {
-      color: var(--muted);
+    section p {
       max-width: 700px;
-    }
-
-    /* FADE-IN */
-    .fade {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
-
-    .fade.show {
-      opacity: 1;
-      transform: translateY(0);
+      color: var(--muted);
+      font-size: 1.05rem;
     }
 
     /* CONTACT */
     .contact {
-      background: #111;
+      background: var(--text);
       color: #fff;
       text-align: center;
+      padding: 6rem 6%;
+    }
+
+    .contact h2 {
+      color: #fff;
+      margin-bottom: 1rem;
     }
 
     .contact p {
-      color: #aaa;
+      color: #bbb;
+      font-size: 1.05rem;
     }
 
     .links {
@@ -158,25 +181,49 @@
     }
 
     .links a {
-      color: #aaa;
+      color: #bbb;
+      font-size: 1rem;
+      transition: color 0.3s ease;
     }
 
     .links a:hover {
-      color: #fff;
+      color: var(--accent);
     }
 
     footer {
-      background: #111;
-      color: #666;
+      background: #0d0d0d;
+      color: #777;
       text-align: center;
       padding: 1.5rem;
       font-size: 0.85rem;
+      border-top: 1px solid #222;
     }
 
+    /* ANIMATIONS */
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
         gap: 1rem;
+      }
+
+      header {
+        padding-top: 120px;
+      }
+
+      section {
+        padding: 4rem 5%;
       }
     }
   </style>
@@ -184,60 +231,66 @@
 
 <body>
 
+  <!-- NAVBAR -->
   <nav>
-    <div class="logo">Satya.</div>
+    <div class="logo">Satya Mani Kumar</div>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="journey.html">Journey</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
       <li><a href="blog.html">Blog</a></li>
     </ul>
   </nav>
 
+  <!-- HERO -->
   <header class="fade">
-    <h1>Satya Manikumar Chode</h1>
+    <h1>Building Efficiency, One Process at a Time.</h1>
     <p>
-      Engineering Management graduate with hands-on exposure to logistics and
-      warehouse operations. Entry-level professional focused on learning,
-      responsibility, and growth.
+      I’m <strong>Satya Mani Kumar Chode</strong>, an Engineering Management graduate with practical experience in logistics and operations. 
+      I focus on improving systems, maintaining accuracy, and supporting team growth — driven by curiosity and a commitment to continuous learning.
     </p>
     <div class="btns">
-      <a href="#contact" class="btn primary">Get in touch</a>
-      <a href="#" class="btn">Download CV</a>
+      <a href="#contact" class="btn primary">Get in Touch</a>
+      <a href="assets/pdf/linkedin.pdf" target="_blank" class="btn secondary">Download CV</a>
     </div>
   </header>
 
+  <!-- ABOUT -->
   <section class="fade">
     <h2>About Me</h2>
     <p>
-      I completed my Master’s in Engineering Management in the UK and am currently
-      building practical experience in logistics and operations. My focus is on
-      understanding real systems, working responsibly in teams, and continuously
-      improving my skills.
+      My UK journey began in <strong>January 2023</strong> when I started my Master’s in Engineering Management at the University of Greenwich. 
+      After completing my dissertation in <strong>August 2024</strong> and graduating in <strong>November 2024</strong>, I began focusing on building 
+      my career through professional certifications in Supply Chain, Inventory Management, and SAP ERP systems. 
+      In <strong>2025</strong>, I took a big personal step — attending over 11 business networking events and developing confidence in communication, leadership, and collaboration.
+      Today, I’m eager to apply both my academic knowledge and real-world experience in a dynamic organization that values growth and operational excellence.
     </p>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact" class="contact fade">
     <h2>Contact</h2>
-    <p>I am open to entry-level opportunities in operations and logistics.</p>
-
+    <p>Open to graduate and entry-level opportunities in logistics, operations, and supply chain management.</p>
     <div class="links">
-      <a href="mailto:manikumarc32@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/satya-manikumar-chode" target="_blank">LinkedIn</a>
-      <a href="https://github.com/manikumarc32" target="_blank">GitHub</a>
+      <a href="mailto:manikumarc32@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+      <a href="https://www.linkedin.com/in/satya-manikumar-chode" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/manikumarc32" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    © 2025 Satya Manikumar Chode · UK
+    © 2026 Satya Mani Kumar Chode · Designed with ❤️ in the UK
   </footer>
 
+  <!-- SCRIPT -->
   <script>
     const fades = document.querySelectorAll('.fade');
 
     function reveal() {
       fades.forEach(el => {
         const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 80) {
+        if (rect.top < window.innerHeight - 100) {
           el.classList.add('show');
         }
       });
