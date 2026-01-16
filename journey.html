@@ -3,88 +3,172 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Journey | Satya Manikumar Chode</title>
+  <title>My Journey | Satya Mani Kumar Chode</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #111;
-      line-height: 1.7;
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #555555;
+      --accent: #007BFF;
+      --border: #e5e5e5;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     header {
-      padding: 4rem 6%;
-      border-bottom: 1px solid #e5e5e5;
+      padding: 6rem 6% 3rem;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      background: #f9fafb;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: clamp(2.4rem, 5vw, 3.2rem);
+      font-weight: 800;
       margin-bottom: 1rem;
+      color: var(--text);
     }
 
     header p {
       max-width: 800px;
-      color: #555;
-      font-size: 1.1rem;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
     }
 
-    section {
-      padding: 4rem 6%;
-      max-width: 900px;
+    main {
+      padding: 5rem 6%;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid var(--border);
+    }
+
+    .milestone {
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    .milestone::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 8px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
     }
 
     .date {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #777;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
     }
 
     p {
       margin-bottom: 1.2rem;
-      color: #444;
+      color: var(--muted);
     }
 
+    /* Certifications Grid */
     .certifications {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
 
     .cert-card {
-      border: 1px solid #e5e5e5;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #333;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
     }
 
     .cert-card img {
       width: 100%;
-      height: auto;
-      margin-bottom: 0.8rem;
-      border: 1px solid #ddd;
+      height: 140px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border);
     }
 
+    .cert-card p {
+      padding: 0.8rem;
+      font-size: 0.9rem;
+      color: var(--text);
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* Back link */
     .back-link {
       display: inline-block;
-      margin-top: 3rem;
-      text-decoration: none;
-      color: #000;
-      border-bottom: 1px solid #000;
+      margin-top: 4rem;
+      color: var(--accent);
       font-weight: 600;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .back-link:hover {
+      border-color: var(--accent);
+    }
+
+    footer {
+      margin-top: 5rem;
+      padding: 2rem 0;
+      text-align: center;
+      background: #f5f5f5;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 3rem 5%;
+      }
+      .timeline {
+        padding-left: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -94,132 +178,100 @@
   <header>
     <h1>My Journey</h1>
     <p>
-      This page shares my journey so far — from completing my education,
-      moving to the UK, building responsibility through work and study,
-      and gradually developing clarity about my career direction.
-      I am at an entry level, learning step by step, and this page reflects that progress honestly.
+      This page shares my journey from my engineering foundation in India to my growth and development in the United Kingdom — 
+      a timeline of continuous learning, adaptation, and discovery of where I can make the most impact.
     </p>
   </header>
 
-  <!-- CHAPTER 1 -->
-  <section>
-    <div class="date">2018 – 2022 · India</div>
-    <h2>Engineering Foundation</h2>
+  <main>
+    <div class="timeline">
 
-    <p>
-      I completed my Bachelor’s degree in Aeronautical Engineering at
-      Sathyabama University in India. These four years helped me develop
-      discipline, technical thinking, and the ability to work consistently
-      toward long-term goals.
-    </p>
-
-    <p>
-      As part of my final-year academic work, I participated in a team-based
-      project involving the development of a 2U Nano Satellite for atmospheric
-      sensing. The project helped me understand system-level thinking,
-      collaboration, and responsibility within a group environment.
-    </p>
-
-    <p>
-      During this phase, I also took part in workshops and technical activities,
-      which contributed to my interest in understanding how real systems are
-      designed, built, and managed.
-    </p>
-  </section>
-
-  <!-- CHAPTER 2 -->
-  <section>
-    <div class="date">2023 – 2025 · United Kingdom</div>
-    <h2>Master’s in Engineering Management & Personal Growth</h2>
-
-    <p>
-      In 2023, I moved to the United Kingdom to pursue a Master’s degree in
-      Engineering Management at the University of Greenwich. This transition
-      was a major step in my life, both academically and personally.
-    </p>
-
-    <p>
-      The program helped me develop an understanding of operations, planning,
-      coordination, and process-focused thinking. It complemented my engineering
-      background by introducing management perspectives relevant to real-world
-      environments.
-    </p>
-
-    <p>
-      For my dissertation, I worked on a research topic titled
-      <strong>“Ethical Considerations on the Use of AI in Healthcare Research.”</strong>
-      This experience strengthened my research skills and helped me understand
-      the importance of responsibility, ethics, and accountability when applying
-      technology in sensitive domains.
-    </p>
-
-    <p>
-      Alongside my studies, I adapted to a new education system, cultural
-      environment, and independent living. I completed my master’s degree
-      on time, which was an important personal achievement for me.
-    </p>
-  </section>
-
-  <!-- CHAPTER 3 -->
-  <section>
-    <div class="date">2025 – Present</div>
-    <h2>Professional Growth, Networking & Skill Building</h2>
-
-    <p>
-      After completing my master’s degree, I focused on gaining practical
-      exposure and understanding how operations function in real working
-      environments. I worked in warehouse and logistics roles, which gave me
-      first-hand experience with order flow, accuracy, teamwork, and
-      responsibility.
-    </p>
-
-    <p>
-      During this period, I also started attending networking events in the UK.
-      These events helped me improve my communication, understand industry
-      expectations, and gain confidence in interacting with professionals from
-      different backgrounds.
-    </p>
-
-    <p>
-      To strengthen my foundational knowledge, I completed several professional
-      certifications focused on supply chain, inventory management, and ERP
-      systems. These courses helped me understand concepts beyond daily tasks
-      and gave me a structured way to learn.
-    </p>
-
-    <!-- CERTIFICATIONS -->
-    <div class="certifications">
-      <div class="cert-card">
-        <img src="images/supply-chain-cert.png" alt="Supply Chain Certification">
-        Supply Chain Foundations
+      <!-- CHAPTER 1 -->
+      <div class="milestone">
+        <div class="date">2018 – 2022 · India</div>
+        <h2>Engineering Foundation</h2>
+        <p>
+          I completed my Bachelor’s in Aeronautical Engineering at <strong>Sathyabama University</strong>, Chennai, India. 
+          These four years taught me discipline, technical problem-solving, and teamwork. 
+          My final project involved developing a <strong>2U Nano Satellite for atmospheric sensing</strong>, 
+          which enhanced my understanding of real-world engineering applications and collaboration.
+        </p>
+        <p>
+          I also participated in technical workshops and seminars, sparking my early curiosity about 
+          how systems are designed, optimized, and managed.
+        </p>
       </div>
 
-      <div class="cert-card">
-        <img src="images/inventory-cert.png" alt="Inventory Management Certification">
-        Inventory Management Foundations
+      <!-- CHAPTER 2 -->
+      <div class="milestone">
+        <div class="date">2023 – 2024 · United Kingdom</div>
+        <h2>Master’s in Engineering Management</h2>
+        <p>
+          In <strong>January 2023</strong>, I began my Master’s in Engineering Management at the 
+          <strong>University of Greenwich</strong>. The course integrated engineering and management principles, 
+          deepening my understanding of operations, leadership, and planning.
+        </p>
+        <p>
+          My dissertation focused on <strong>“Ethical Considerations on the Use of AI in Healthcare Research.”</strong> 
+          This project refined my research and analytical skills, and helped me appreciate the importance of ethics and accountability in technology-driven environments.
+        </p>
+        <p>
+          I graduated in <strong>November 2024</strong>, marking a proud milestone in my academic and personal journey.
+        </p>
       </div>
 
-      <div class="cert-card">
-        <img src="images/sap-erp-cert.png" alt="SAP ERP Certification">
-        SAP ERP Essentials
+      <!-- CHAPTER 3 -->
+      <div class="milestone">
+        <div class="date">2024 – 2026 · Professional Growth</div>
+        <h2>Career Building, Networking & Certifications</h2>
+        <p>
+          After completing my Master’s, I focused on applying theory to practice through warehouse and logistics roles, 
+          gaining hands-on experience in order flow, inventory accuracy, and teamwork.
+        </p>
+        <p>
+          From <strong>March 2025 to January 2026</strong>, I attended over 11 professional networking events — 
+          learning to communicate confidently, exchange insights, and build meaningful connections with industry professionals.
+        </p>
+        <p>
+          I also completed several LinkedIn Learning certifications that expanded my technical understanding:
+        </p>
+
+        <div class="certifications">
+          <a href="assets/pdf/supply-chain.pdf" target="_blank" class="cert-card">
+            <img src="assets/images/supply-chain-cert.png" alt="Supply Chain Foundations Certificate">
+            <p>Supply Chain Foundations</p>
+          </a>
+
+          <a href="assets/pdf/inventory-mgmt.pdf" target="_blank" class="cert-card">
+            <img src="assets/images/inventory-cert.png" alt="Inventory Management Certificate">
+            <p>Inventory Management Foundations</p>
+          </a>
+
+          <a href="assets/pdf/sap-erp.pdf" target="_blank" class="cert-card">
+            <img src="assets/images/sap-erp-cert.png" alt="SAP ERP Certificate">
+            <p>SAP ERP Essential Training</p>
+          </a>
+
+          <a href="assets/pdf/sap-mm.pdf" target="_blank" class="cert-card">
+            <img src="assets/images/sap-mm-cert.png" alt="SAP MM Certificate">
+            <p>SAP Material Management</p>
+          </a>
+        </div>
+
+        <p>
+          This phase helped me bridge academic learning with practical industry understanding — 
+          and shaped my vision to pursue a career in logistics and supply chain operations.
+        </p>
       </div>
 
-      <div class="cert-card">
-        <img src="images/excel-cert.png" alt="Excel Certification">
-        Excel for Supply Chain Analysis
-      </div>
     </div>
 
-    <p>
-      I am currently continuing to learn and improve, with the goal of building
-      a strong foundation for an entry-level role where I can take responsibility,
-      support teams effectively, and grow professionally over time.
-    </p>
-  </section>
-
-  <section>
     <a href="index.html" class="back-link">← Back to Home</a>
-  </section>
+  </main>
+
+  <footer>
+    © 2026 Satya Mani Kumar Chode · Designed with care
+  </footer>
 
 </body>
 </html>
